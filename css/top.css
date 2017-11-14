@@ -1,0 +1,107 @@
+@charset "UTF-8";
+html, body, dd, dl, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, ol, p, select, td, textarea, th, ul, li {
+  margin: 0;
+  padding: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 16px;
+  font-weight: 100; }
+
+body {
+  font-family: "微软雅黑"; }
+
+ul, ol, li {
+  list-style: none; }
+
+a, u {
+  text-decoration: none; }
+
+i, em {
+  font-style: normal; }
+
+b, strong {
+  font-weight: 100; }
+
+img {
+  display: block;
+  border: 0; }
+
+.clearfix:after {
+  content: ".";
+  clear: both;
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden; }
+
+.clearfix {
+  zoom: 1; }
+
+.top1, .logo {
+  width: 1200px;
+  margin: 0 auto; }
+
+.top {
+  height: 29px;
+  border: 1px solid #ccc;
+  background: url(../img/top_bj.png) repeat-x 0 0; }
+  .top .top1 {
+    height: 29px; }
+    .top .top1 .top1_left {
+      float: left; }
+      .top .top1 .top1_left .login b {
+        font-size: 12px; }
+      .top .top1 .top1_left .login a {
+        font-size: 12px; }
+      .top .top1 .top1_left .register b {
+        font-size: 12px; }
+      .top .top1 .top1_left .register a {
+        font-size: 12px; }
+    .top .top1 .top1_right {
+      padding-top: 2px;
+      line-height: 25px;
+      float: right;
+      font-size: 12px; }
+      .top .top1 .top1_right ul {
+        display: none;
+        font-size: 12px; }
+      .top .top1 .top1_right .myacount {
+        float: left;
+        width: 82px;
+        margin-right: 8px;
+        position: relative; }
+        .top .top1 .top1_right .myacount .menu a b {
+          width: 10px;
+          height: 5px;
+          display: block;
+          overflow: hidden;
+          cursor: pointer;
+          transform: rotate(180deg);
+          transform-origin: 50% 50%;
+          transition: transform .2s ease-in;
+          background: url(../img/top_r_phone.png) no-repeat 0 0;
+          position: absolute;
+          right: 5px;
+          top: 10px; }
+      .top .top1 .top1_right .help {
+        float: left;
+        width: 86px;
+        position: relative; }
+      .top .top1 .top1_right .collection {
+        float: left;
+        width: 66px;
+        position: relative; }
+      .top .top1 .top1_right .tel {
+        float: left;
+        position: relative; }
+
+.logo {
+  height: 30px;
+  position: absolute;
+  top: 20px;
+  left: 50%; }
+  .logo .logo_left a {
+    background: url(../img/logo.png) no-repeat 0 0;
+    display: block; }
+
+/*# sourceMappingURL=top.css.map */

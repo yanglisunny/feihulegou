@@ -1,0 +1,68 @@
+@import "public.scss";
+$size:12px;
+.top{
+        height:29px;
+        border:1px solid #ccc;
+        background:url(../img/top_bj.png) repeat-x 0 0;
+        .top1{
+//          background:red;
+            height:29px;
+            .top1_left{
+                float:left;
+                .login{ 
+                    b{font-size:$size;}
+                    a{ font-size:12px;}
+                }
+                .register{
+                    b{font-size:$size;}
+                    a{ font-size:12px;}
+                }
+            }
+            .top1_right{
+                padding-top:2px;
+                line-height:25px;
+                float:right;
+                font-size:$size;
+                ul{
+                    display:none;
+                    font-size:$size;
+                }
+                .myacount{float:left;width:82px;margin-right:8px;
+                position:relative;
+                    .menu{
+                        a{
+                            b{width:10px;height:5px;display:block;overflow:hidden;
+                            cursor:pointer;
+                            transform:rotate(180deg);
+                            transform-origin:50% 50%;
+                            transition:transform .2s ease-in;
+                               background:url(../img/top_r_phone.png) no-repeat 0 0;
+                                position: absolute;
+                                right:5px;
+                                top:10px;
+                            }
+                            
+                        }
+                    }
+                }
+                .help{float:left;width:86px; position:relative;}
+                .collection{float:left;width:66px; position:relative;}
+                .tel{float:left; position:relative;}
+                
+            } 
+        }
+}
+
+.logo{
+    height:30px;
+    position:absolute;
+    top:20px;
+    left:50%;
+    .logo_left{
+//      width:
+        a{background:url(../img/logo.png) no-repeat 0 0;
+            display:block;
+        }
+    }
+}
+    
