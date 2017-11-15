@@ -316,15 +316,18 @@ input:focus {
 .louti {
   background: #fafafa; }
   .louti #LoutiNav {
-    position: absolute;
+    position: fixed;
     width: 40px;
     left: 0;
-    top: 300px;
+    top: 30%;
     background: rgba(0, 255, 240, 0.7);
-    font-size: 12px; }
+    font-size: 12px;
+    display: none; }
     .louti #LoutiNav li {
       padding: 3px;
       border: 1px dotted red; }
+    .louti #LoutiNav .las {
+      background: rgba(255, 0, 0, 0.8); }
   .louti #main .Louti {
     height: 541px;
     padding-bottom: 20px; }

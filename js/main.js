@@ -11,4 +11,6 @@ requirejs(["jquery","lb","xd","lt"],function($,lb,xd,lt){
 		$(window).scroll(function(){
 			xd.xiding();
 		})
+			lt.louti();
+		
 })
