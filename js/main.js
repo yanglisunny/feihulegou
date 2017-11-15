@@ -1,10 +1,14 @@
 requirejs.config({
 	paths : {
 		jquery : "jquery-1.11.1.min",
-		fun : "function"
+		lb : "lunbo",
+		xd : "xiding",
+		lt : "louti"
 	}
 })
-requirejs(["jquery","fun"],function($,fun){
-		fun.lunbo();
-		fun.xiding();
+requirejs(["jquery","lb","xd","lt"],function($,lb,xd,lt){
+		lb.lunbo();
+		$(window).scroll(function(){
+			xd.xiding();
+		})
 })

@@ -180,7 +180,7 @@ $size:12px;
             height: 60px;
             background: url(../img/btn.gif);
             position: absolute;
-            left: 243px; top: 187px;
+            left: 222px; top: 187px;
         }
         .toRight {
             width: 60px;
@@ -244,37 +244,202 @@ $size:12px;
 }
 
 //秒杀
-.miaosha{
-    height:267px;
-    padding-top:26px;
-//  background:black;
-    .time{
-        float:left;
-        margin-right:9px;
-        width:190px;
-        height:268px;
-        background:url(../img/miaosha_bj.jpg) no-repeat 0 0; 
-    }
-    .product{
-        float:left;
-        div{
-            width:200px;
-            height:267px;
-            margin:3px 0 3px 0;
-//          border-right: 1px  solid #fafafa;
+.miaosha_con{
+    background:#fafafa;
+    .miaosha{
+        height:260px;
+        padding-top:26px;
+        padding-bottom:10px;
+        background:#fff;
+        .time{
             float:left;
-            dl{
-                dd{
-                     text-align:center;
+            margin-right:9px;
+            width:190px;
+            height:250px;
+            background:url(../img/miaosha_bj.jpg) no-repeat 0 0; 
+        }
+        .product{
+            float:left;
+            position:relative;
+            .product_list{
+                width:200px;
+                height:244px;
+                margin:3px 0 3px 0;
+    //          border-right: 1px  solid #fafafa;
+                float:left;
+                dl{
+                    dd{
+                         text-align:center;
+                    }
+                    dd:nth-of-type(1){
+                         margin-top:18px;
+                        font-size:15px;
+                        font-family: Microsoft Yahei;
+                        font-weight:bold;
+                    }
+                    dd:nth-of-type(2){
+                        font-size:12px;
+                        font-family: Microsoft Yahei;
+                        color:#887373;
+                         font-weight:bold;
+                    }
+                    dt{
+                        img{
+                            margin:auto;
+                            width:150px;
+                            height:150px;
+                        }
+                    }
                 }
-                dt{
-                    img{
-                        margin:auto;
-                        width:150px;
-                        height:150px;
+                
+                .qinggou_box{
+                    display:block;
+                    height:30px;
+                    width:200px;
+                    position:absolute;
+                    bottom:0;
+                    .qinggou{
+                         height:30px;
+                         width:200px;
+                        background:url(../img/qinggou.png) no-repeat 0 0 ;
+                        .qg_list{
+                            span{color:#fff;text-align:center;}
+                            span:nth-child(1){
+                                font-size:20px;
+                                font-family: Microsoft Yahei;
+                                 font-weight: bold;
+                                 margin-left: 8px;
+                            }
+                            span:nth-child(2){
+                                font-size:12px;
+                                text-decoration:line-through
+                            }
+                        }
+                        
                     }
                 }
             }
+        }
+    }
+}
+//返厂
+.begin_con{
+//  padding-bottom:20px;
+    background:#fafafa;
+}
+
+//<!--楼层-->
+.louti{
+    background:#fafafa;
+    #LoutiNav{
+        position:absolute;
+        width:40px;
+        left:0;
+        top:300px;
+        background:rgba(0,255,240,.7);
+        font-size:12px;
+//      display:none;
+        li{
+            padding:3px;
+            border:1px dotted red;
+        }
+    }
+    #main{
+        .Louti{
+            height:541px;
+            padding-bottom:20px;
+            //头部
+            .Louti_top{
+                height:56px;
+                .lists{
+                    float:right;
+                    height:30px;
+                    padding:25px 0 0;
+                    a{
+                        color:#000;
+                        margin: 20px 10px 10px;
+                        font-size: 14px;
+                        font-family: "Microsoft YaHei";
+                    }
+                }
+                
+            }
+            //中部
+            .Louti_middle{
+                    .Lleft{
+                        width:199px;
+                        height:415px;
+                         float:left;
+                    }
+                    .Lcenter{
+                         width:399px;
+                         height:415px;
+                         float:left;
+                    }
+                    .Lright{
+                         float:left;
+                         width:600px;
+                         height:415px;
+                         .Lright1{
+                             float:left;
+                             width:198px;
+                             height:206px;
+                             margin-top:5px;
+                             border-bottom: 1px solid #f5f5f5;
+                             border-right: 1px solid #f5f5f5;
+                             .Lright1_img{
+                                 height:150px;
+                                 width:150px;
+                                  margin:auto;
+                                 img{
+                                     width:100%;
+                                    
+                                 }
+                             }
+                             .Lright1_name{
+                                 
+                                 height:25px;
+                                 width:198px;
+                                  line-height:25px;
+                                  text-align:center;
+                                 a{
+//                                   display:block;
+                                     font-size:12px;
+                                     line-height:12px;
+                                     color:#000;
+                                 }
+                             }
+                           .Lright1_price{
+                                line-height: 22px;
+                                display: inline-block;
+                                cursor: pointer;
+                                height: 22px;
+                                width:178px;
+                                text-align:center;
+                               a{
+                                     font-family: Microsoft Yahei;
+                                     font-size: 16px;
+                                     color: #e30303;
+                                     font-weight:bold;
+                                     
+                                 }
+                           }
+                         }
+                    }
+                   
+                }
+                
+                //底部
+                .Louti_bottom{
+//                  margin-top:15px;
+                     border-top: 1px solid #f5f5f5;
+                    ul{
+                        li{
+                            img{width:150px;}
+                            float:left;
+                        }
+                    }
+                }
         }
     }
 }

@@ -40,7 +40,7 @@ img {
 input:focus {
   outline: none; }
 
-.top1, .logo, .miaosha {
+.top1, .logo, .miaosha, .begin, #main {
   width: 1200px;
   margin: 0 auto; }
 
@@ -202,7 +202,7 @@ input:focus {
       height: 60px;
       background: url(../img/btn.gif);
       position: absolute;
-      left: 243px;
+      left: 222px;
       top: 187px; }
     .banner .arr .toRight {
       width: 60px;
@@ -251,27 +251,145 @@ input:focus {
       font-size: 12px;
       display: block; }
 
-.miaosha {
-  height: 267px;
-  padding-top: 26px; }
-  .miaosha .time {
-    float: left;
-    margin-right: 9px;
-    width: 190px;
-    height: 268px;
-    background: url(../img/miaosha_bj.jpg) no-repeat 0 0; }
-  .miaosha .product {
-    float: left; }
-    .miaosha .product div {
-      width: 200px;
-      height: 267px;
-      margin: 3px 0 3px 0;
+.miaosha_con {
+  background: #fafafa; }
+  .miaosha_con .miaosha {
+    height: 260px;
+    padding-top: 26px;
+    padding-bottom: 10px;
+    background: #fff; }
+    .miaosha_con .miaosha .time {
+      float: left;
+      margin-right: 9px;
+      width: 190px;
+      height: 250px;
+      background: url(../img/miaosha_bj.jpg) no-repeat 0 0; }
+    .miaosha_con .miaosha .product {
+      float: left;
+      position: relative; }
+      .miaosha_con .miaosha .product .product_list {
+        width: 200px;
+        height: 244px;
+        margin: 3px 0 3px 0;
+        float: left; }
+        .miaosha_con .miaosha .product .product_list dl dd {
+          text-align: center; }
+        .miaosha_con .miaosha .product .product_list dl dd:nth-of-type(1) {
+          margin-top: 18px;
+          font-size: 15px;
+          font-family: Microsoft Yahei;
+          font-weight: bold; }
+        .miaosha_con .miaosha .product .product_list dl dd:nth-of-type(2) {
+          font-size: 12px;
+          font-family: Microsoft Yahei;
+          color: #887373;
+          font-weight: bold; }
+        .miaosha_con .miaosha .product .product_list dl dt img {
+          margin: auto;
+          width: 150px;
+          height: 150px; }
+        .miaosha_con .miaosha .product .product_list .qinggou_box {
+          display: block;
+          height: 30px;
+          width: 200px;
+          position: absolute;
+          bottom: 0; }
+          .miaosha_con .miaosha .product .product_list .qinggou_box .qinggou {
+            height: 30px;
+            width: 200px;
+            background: url(../img/qinggou.png) no-repeat 0 0; }
+            .miaosha_con .miaosha .product .product_list .qinggou_box .qinggou .qg_list span {
+              color: #fff;
+              text-align: center; }
+            .miaosha_con .miaosha .product .product_list .qinggou_box .qinggou .qg_list span:nth-child(1) {
+              font-size: 20px;
+              font-family: Microsoft Yahei;
+              font-weight: bold;
+              margin-left: 8px; }
+            .miaosha_con .miaosha .product .product_list .qinggou_box .qinggou .qg_list span:nth-child(2) {
+              font-size: 12px;
+              text-decoration: line-through; }
+
+.begin_con {
+  background: #fafafa; }
+
+.louti {
+  background: #fafafa; }
+  .louti #LoutiNav {
+    position: absolute;
+    width: 40px;
+    left: 0;
+    top: 300px;
+    background: rgba(0, 255, 240, 0.7);
+    font-size: 12px; }
+    .louti #LoutiNav li {
+      padding: 3px;
+      border: 1px dotted red; }
+  .louti #main .Louti {
+    height: 541px;
+    padding-bottom: 20px; }
+    .louti #main .Louti .Louti_top {
+      height: 56px; }
+      .louti #main .Louti .Louti_top .lists {
+        float: right;
+        height: 30px;
+        padding: 25px 0 0; }
+        .louti #main .Louti .Louti_top .lists a {
+          color: #000;
+          margin: 20px 10px 10px;
+          font-size: 14px;
+          font-family: "Microsoft YaHei"; }
+    .louti #main .Louti .Louti_middle .Lleft {
+      width: 199px;
+      height: 415px;
       float: left; }
-      .miaosha .product div dl dd {
-        text-align: center; }
-      .miaosha .product div dl dt img {
-        margin: auto;
-        width: 150px;
-        height: 150px; }
+    .louti #main .Louti .Louti_middle .Lcenter {
+      width: 399px;
+      height: 415px;
+      float: left; }
+    .louti #main .Louti .Louti_middle .Lright {
+      float: left;
+      width: 600px;
+      height: 415px; }
+      .louti #main .Louti .Louti_middle .Lright .Lright1 {
+        float: left;
+        width: 198px;
+        height: 206px;
+        margin-top: 5px;
+        border-bottom: 1px solid #f5f5f5;
+        border-right: 1px solid #f5f5f5; }
+        .louti #main .Louti .Louti_middle .Lright .Lright1 .Lright1_img {
+          height: 150px;
+          width: 150px;
+          margin: auto; }
+          .louti #main .Louti .Louti_middle .Lright .Lright1 .Lright1_img img {
+            width: 100%; }
+        .louti #main .Louti .Louti_middle .Lright .Lright1 .Lright1_name {
+          height: 25px;
+          width: 198px;
+          line-height: 25px;
+          text-align: center; }
+          .louti #main .Louti .Louti_middle .Lright .Lright1 .Lright1_name a {
+            font-size: 12px;
+            line-height: 12px;
+            color: #000; }
+        .louti #main .Louti .Louti_middle .Lright .Lright1 .Lright1_price {
+          line-height: 22px;
+          display: inline-block;
+          cursor: pointer;
+          height: 22px;
+          width: 178px;
+          text-align: center; }
+          .louti #main .Louti .Louti_middle .Lright .Lright1 .Lright1_price a {
+            font-family: Microsoft Yahei;
+            font-size: 16px;
+            color: #e30303;
+            font-weight: bold; }
+    .louti #main .Louti .Louti_bottom {
+      border-top: 1px solid #f5f5f5; }
+      .louti #main .Louti .Louti_bottom ul li {
+        float: left; }
+        .louti #main .Louti .Louti_bottom ul li img {
+          width: 150px; }
 
 /*# sourceMappingURL=top.css.map */

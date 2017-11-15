@@ -52,9 +52,6 @@ define(["require"],function(){
 				$(".banner-nav-list>li").eq(index).toggleClass("active");
 				$(".banner-nav-list>li").eq(index).siblings().removeClass("active");
 			})
-		},
-		xiding : function(){
-			
 		}
 	}
 })
