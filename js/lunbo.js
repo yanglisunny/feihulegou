@@ -3,6 +3,7 @@ define(["require"],function(){
 		lunbo : function(){
 			var index = 0;
 			var timer = setInterval(autoplay,1500);
+			var flag = true;
 			function autoplay(){
 				$(".img-list > li").eq(index++).fadeOut(1000);
 				if(index==5){
@@ -25,24 +26,34 @@ define(["require"],function(){
 			})
 			
 			$(".toLeft").click(function(){
-				$(".img-list > li").eq(index--).fadeOut(1000);
-				if(index==-1){
-					index=4;
+				if(flag){
+					flag=false;
+					$(".img-list > li").eq(index--).fadeOut(1000);
+					if(index==-1){
+						index=4;
+					}
+					$(".banner-nav-list>li").eq(index).toggleClass("active");
+					$(".banner-nav-list>li").eq(index).siblings().removeClass("active");
+					$(".img-list > li").eq(index).fadeIn(1000,function(){
+						flag=true;
+					});
 				}
-				$(".banner-nav-list>li").eq(index).toggleClass("active");
-				$(".banner-nav-list>li").eq(index).siblings().removeClass("active");
-				$(".img-list > li").eq(index).fadeIn(1000);
 				
 			})
 			
 			$(".toRight").click(function(){
-				$(".img-list > li").eq(index++).fadeOut(1000);
-				if(index==5){
-					index=0;
+				if(flag){
+					flag=false;
+					$(".img-list > li").eq(index++).fadeOut(1000);
+					if(index==5){
+						index=0;
+					}
+					$(".banner-nav-list>li").eq(index).toggleClass("active");
+					$(".banner-nav-list>li").eq(index).siblings().removeClass("active");
+					$(".img-list > li").eq(index).fadeIn(1000,function(){
+						flag=true;
+					});
 				}
-				$(".banner-nav-list>li").eq(index).toggleClass("active");
-				$(".banner-nav-list>li").eq(index).siblings().removeClass("active");
-				$(".img-list > li").eq(index).fadeIn(1000);
 				
 			})
 			$(".banner-nav-list>li").click(function(){

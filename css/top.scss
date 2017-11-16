@@ -11,11 +11,11 @@ $size:12px;
                 float:left;
                 .login{ 
                     b{font-size:$size;}
-                    a{ font-size:12px;}
+                    a{ font-size:$size;}
                 }
                 .register{
                     b{font-size:$size;}
-                    a{ font-size:12px;}
+                    a{ font-size:$size;}
                 }
             }
             .top1_right{
@@ -23,31 +23,64 @@ $size:12px;
                 line-height:25px;
                 float:right;
                 font-size:$size;
+                a{
+                    color:#333;
+                }
                 ul{
                     display:none;
                     font-size:$size;
                 }
                 .myacount{float:left;width:82px;margin-right:8px;
                 position:relative;
+                padding-left:20px;
                     .menu{
                         a{
-                            b{width:10px;height:5px;display:block;overflow:hidden;
+                           b{
+                             background:url(../img/top_r_phone.png) no-repeat 0px 0px;
+                            width:10px;height:5px;display:block;overflow:hidden;
                             cursor:pointer;
-                            transform:rotate(180deg);
-                            transform-origin:50% 50%;
-                            transition:transform .2s ease-in;
-                               background:url(../img/top_r_phone.png) no-repeat 0 0;
                                 position: absolute;
-                                right:5px;
+                                right:13px;
                                 top:10px;
+                                &:hover{
+                                    transform:rotate(180deg);
+                                    transform-origin:50% 50%;
+                                    transition:transform .2s ease-in;
+                                }
+                            }
+                            span{
+                                position: absolute;
+                                right: -2px;
+                                top: 8px;
+                                display: block;
+                                width: 2px;
+                                height: 10px;
+                                overflow: hidden;           
+                                 background:url(../img/top_r_phone.png) no-repeat -10px 0px;
                             }
                             
                         }
+                        ul{
+                            background:#fff;
+                            li{
+                                &:hover{color:red;}
+                            }
+                        }
                     }
                 }
-                .help{float:left;width:86px; position:relative;}
+                .help{
+                    float:left;width:86px; position:relative;text-align:center;
+                    ul{
+                        li{
+                            &:hover{color:red;}
+                        }
+                    }
+                }
                 .collection{float:left;width:66px; position:relative;}
-                .tel{float:left; position:relative;}
+                .tel{padding-left:25px;
+                    float:left; position:relative;
+                    background:url(../img/top_r_phone.png) no-repeat -10px 7px;
+                }
                 
             } 
         }
@@ -96,7 +129,10 @@ $size:12px;
     height:40px;
     background:#ffc400;
     span{display:block;float:left;margin-right:22px;font-size:18px;height:40px;
-        line-height:40px;}
+            line-height:40px;
+            cursor: pointer;
+            &:hover{background:#8B7E66;}
+        }
     .all{  height:40px;
         line-height:40px;
         float:left;
@@ -119,7 +155,7 @@ $size:12px;
             height:24px;
             display:block;
             background:#fff; 
-            background:url(../img/shopcart.png) no-repeat 0px -75px ;
+            background:url(../img/shopcart.png) no-repeat -6px -75px ;
             em{color:red;}
         }
     }
@@ -131,6 +167,7 @@ $size:12px;
         font-size:12px;
          line-height:24px;
         text-align:center;
+        cursor:pointer;
         background:url(../img/shopcart.png) no-repeat -122px -75px ;
     }
 }
@@ -143,6 +180,7 @@ $size:12px;
     height: 480px;
     background: grey;
 //  overflow: hidden;
+cursor: pointer;
     .img-list{
         li{
             width: 100%;
@@ -198,7 +236,10 @@ $size:12px;
     div{
          width:190px;
           a{
-              
+              &:hover{
+                  color:#FF8C00;
+                  background:#fff;
+              }
               display:block;
               height:32px;
               font-size:14px;
@@ -215,6 +256,7 @@ $size:12px;
     top:170px;
 //  background:#fff;
     width:227px;
+    cursor: pointer;
     .notice_top{
        width:227px;
         height:40px;
@@ -252,6 +294,7 @@ $size:12px;
             width:190px;
             height:250px;
             background:url(../img/miaosha_bj.jpg) no-repeat 0 0; 
+            cursor: pointer;
         }
         .product{
             float:left;
@@ -263,6 +306,7 @@ $size:12px;
     //          border-right: 1px  solid #fafafa;
                 float:left;
                 dl{
+                    cursor: pointer;
                     dd{
                          text-align:center;
                     }
@@ -331,15 +375,16 @@ $size:12px;
         width:40px;
         left:0;
         top:30%;
-        background:rgba(0,255,240,.7);
+        background:rgba(139,139,122,.7);
         font-size:12px;
         display:none;
+        cursor: pointer;
         li{
             padding:3px;
-            border:1px dotted red;
+            border:1px dotted #8B8B83;
         }
         .las{
-            background:rgba(255,0,0,.8);
+            background:rgba(255,196,0,.8);
         }
     }
     #main{
@@ -438,6 +483,104 @@ $size:12px;
                         }
                     }
                 }
+        }
+    }
+}
+
+.bottom{
+    height:278px;
+    padding-top:67px;
+    .bottom_top{
+        width:983px;
+        height:150px;
+        margin:0 auto;
+         .top_left{
+             width:250px;
+            float:left;
+            padding-top:20px;
+            p{
+                cursor: pointer;
+                font-size:12px;
+                line-height:12px;
+                color:#999;
+            }
+            p:nth-child(1){
+                margin-left:25px;
+                margin-bottom:12px;
+                a{
+                    color:#333;
+                }
+            }
+            p:nth-child(2){
+                margin-left:25px;
+                  margin-bottom:26px;
+                a{
+                    color:#333;
+                }
+            }
+            p:nth-child(3){
+                margin-left:80px;
+                 margin-bottom:19px;
+                a{color:#ff6600;}
+            }
+            p:nth-child(4){
+                margin-left:115px;
+                a{color:#ff6600;}
+            }
+         }
+         .top_right{
+              width:713px;
+             float:left;
+             span{
+                  cursor: pointer;
+                 width:126px;
+                 float:left;
+                 border-left:1px solid #999;
+                 padding-left:14px;
+                 li{
+                      cursor: pointer;
+                     color:#999;
+                     font-size:12px;
+                     line-height:19px;
+                 }
+                 li:nth-child(1){
+                     color:#000;
+                 }
+             }
+         }
+        
+    }
+    .bottom_bottom{
+        width:975px;
+        height:105px;
+        margin:0 auto;
+        position:relative;
+        ul{
+            float:left;
+            width:100%;
+            margin-bottom:12px;
+            li{
+                cursor: pointer;
+                float:left;
+                color:#333;
+                font-size:12px;
+                margin-right:20px;
+            }
+        }
+        p{
+            cursor: pointer;
+            margin-bottom:11px;
+            color:#999;
+            font-size:12px;
+            line-height:12px;
+        }
+        img{
+            cursor: pointer;
+            position:absolute;
+            right:0;
+            top:0;
+            width:36px;
+            height:50px;
         }
     }
 }

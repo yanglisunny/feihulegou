@@ -40,7 +40,7 @@ img {
 input:focus {
   outline: none; }
 
-.top1, .logo, .miaosha, .begin, #main {
+.top1, .logo, .miaosha, .begin, #main, .bottom {
   width: 1200px;
   margin: 0 auto; }
 
@@ -65,6 +65,8 @@ input:focus {
       line-height: 25px;
       float: right;
       font-size: 12px; }
+      .top .top1 .top1_right a {
+        color: #333; }
       .top .top1 .top1_right ul {
         display: none;
         font-size: 12px; }
@@ -72,31 +74,51 @@ input:focus {
         float: left;
         width: 82px;
         margin-right: 8px;
-        position: relative; }
+        position: relative;
+        padding-left: 20px; }
         .top .top1 .top1_right .myacount .menu a b {
+          background: url(../img/top_r_phone.png) no-repeat 0px 0px;
           width: 10px;
           height: 5px;
           display: block;
           overflow: hidden;
           cursor: pointer;
-          transform: rotate(180deg);
-          transform-origin: 50% 50%;
-          transition: transform .2s ease-in;
-          background: url(../img/top_r_phone.png) no-repeat 0 0;
           position: absolute;
-          right: 5px;
+          right: 13px;
           top: 10px; }
+          .top .top1 .top1_right .myacount .menu a b:hover {
+            transform: rotate(180deg);
+            transform-origin: 50% 50%;
+            transition: transform .2s ease-in; }
+        .top .top1 .top1_right .myacount .menu a span {
+          position: absolute;
+          right: -2px;
+          top: 8px;
+          display: block;
+          width: 2px;
+          height: 10px;
+          overflow: hidden;
+          background: url(../img/top_r_phone.png) no-repeat -10px 0px; }
+        .top .top1 .top1_right .myacount .menu ul {
+          background: #fff; }
+          .top .top1 .top1_right .myacount .menu ul li:hover {
+            color: red; }
       .top .top1 .top1_right .help {
         float: left;
         width: 86px;
-        position: relative; }
+        position: relative;
+        text-align: center; }
+        .top .top1 .top1_right .help ul li:hover {
+          color: red; }
       .top .top1 .top1_right .collection {
         float: left;
         width: 66px;
         position: relative; }
       .top .top1 .top1_right .tel {
+        padding-left: 25px;
         float: left;
-        position: relative; }
+        position: relative;
+        background: url(../img/top_r_phone.png) no-repeat -10px 7px; }
 
 .logo {
   height: 100px; }
@@ -138,7 +160,10 @@ input:focus {
     margin-right: 22px;
     font-size: 18px;
     height: 40px;
-    line-height: 40px; }
+    line-height: 40px;
+    cursor: pointer; }
+    .navs span:hover {
+      background: #8B7E66; }
   .navs .all {
     height: 40px;
     line-height: 40px;
@@ -160,7 +185,7 @@ input:focus {
       height: 24px;
       display: block;
       background: #fff;
-      background: url(../img/shopcart.png) no-repeat 0px -75px; }
+      background: url(../img/shopcart.png) no-repeat -6px -75px; }
       .navs .shopcart a em {
         color: red; }
   .navs .cal {
@@ -171,13 +196,15 @@ input:focus {
     font-size: 12px;
     line-height: 24px;
     text-align: center;
+    cursor: pointer;
     background: url(../img/shopcart.png) no-repeat -122px -75px; }
 
 .banner {
   min-width: 1200px;
   position: relative;
   height: 480px;
-  background: grey; }
+  background: grey;
+  cursor: pointer; }
   .banner .img-list li {
     width: 100%;
     height: 480px; }
@@ -227,12 +254,16 @@ input:focus {
       font-size: 14px;
       line-height: 30px;
       color: #000; }
+      .categorybox div a:hover {
+        color: #FF8C00;
+        background: #fff; }
 
 .notice {
   position: absolute;
   left: 1000px;
   top: 170px;
-  width: 227px; }
+  width: 227px;
+  cursor: pointer; }
   .notice .notice_top {
     width: 227px;
     height: 40px;
@@ -263,7 +294,8 @@ input:focus {
       margin-right: 9px;
       width: 190px;
       height: 250px;
-      background: url(../img/miaosha_bj.jpg) no-repeat 0 0; }
+      background: url(../img/miaosha_bj.jpg) no-repeat 0 0;
+      cursor: pointer; }
     .miaosha_con .miaosha .product {
       float: left;
       position: relative; }
@@ -272,22 +304,24 @@ input:focus {
         height: 244px;
         margin: 3px 0 3px 0;
         float: left; }
-        .miaosha_con .miaosha .product .product_list dl dd {
-          text-align: center; }
-        .miaosha_con .miaosha .product .product_list dl dd:nth-of-type(1) {
-          margin-top: 18px;
-          font-size: 15px;
-          font-family: Microsoft Yahei;
-          font-weight: bold; }
-        .miaosha_con .miaosha .product .product_list dl dd:nth-of-type(2) {
-          font-size: 12px;
-          font-family: Microsoft Yahei;
-          color: #887373;
-          font-weight: bold; }
-        .miaosha_con .miaosha .product .product_list dl dt img {
-          margin: auto;
-          width: 150px;
-          height: 150px; }
+        .miaosha_con .miaosha .product .product_list dl {
+          cursor: pointer; }
+          .miaosha_con .miaosha .product .product_list dl dd {
+            text-align: center; }
+          .miaosha_con .miaosha .product .product_list dl dd:nth-of-type(1) {
+            margin-top: 18px;
+            font-size: 15px;
+            font-family: Microsoft Yahei;
+            font-weight: bold; }
+          .miaosha_con .miaosha .product .product_list dl dd:nth-of-type(2) {
+            font-size: 12px;
+            font-family: Microsoft Yahei;
+            color: #887373;
+            font-weight: bold; }
+          .miaosha_con .miaosha .product .product_list dl dt img {
+            margin: auto;
+            width: 150px;
+            height: 150px; }
         .miaosha_con .miaosha .product .product_list .qinggou_box {
           display: block;
           height: 30px;
@@ -320,14 +354,15 @@ input:focus {
     width: 40px;
     left: 0;
     top: 30%;
-    background: rgba(0, 255, 240, 0.7);
+    background: rgba(139, 139, 122, 0.7);
     font-size: 12px;
-    display: none; }
+    display: none;
+    cursor: pointer; }
     .louti #LoutiNav li {
       padding: 3px;
-      border: 1px dotted red; }
+      border: 1px dotted #8B8B83; }
     .louti #LoutiNav .las {
-      background: rgba(255, 0, 0, 0.8); }
+      background: rgba(255, 196, 0, 0.8); }
   .louti #main .Louti {
     height: 541px;
     padding-bottom: 20px; }
@@ -394,5 +429,85 @@ input:focus {
         float: left; }
         .louti #main .Louti .Louti_bottom ul li img {
           width: 150px; }
+
+.bottom {
+  height: 278px;
+  padding-top: 67px; }
+  .bottom .bottom_top {
+    width: 983px;
+    height: 150px;
+    margin: 0 auto; }
+    .bottom .bottom_top .top_left {
+      width: 250px;
+      float: left;
+      padding-top: 20px; }
+      .bottom .bottom_top .top_left p {
+        cursor: pointer;
+        font-size: 12px;
+        line-height: 12px;
+        color: #999; }
+      .bottom .bottom_top .top_left p:nth-child(1) {
+        margin-left: 25px;
+        margin-bottom: 12px; }
+        .bottom .bottom_top .top_left p:nth-child(1) a {
+          color: #333; }
+      .bottom .bottom_top .top_left p:nth-child(2) {
+        margin-left: 25px;
+        margin-bottom: 26px; }
+        .bottom .bottom_top .top_left p:nth-child(2) a {
+          color: #333; }
+      .bottom .bottom_top .top_left p:nth-child(3) {
+        margin-left: 80px;
+        margin-bottom: 19px; }
+        .bottom .bottom_top .top_left p:nth-child(3) a {
+          color: #ff6600; }
+      .bottom .bottom_top .top_left p:nth-child(4) {
+        margin-left: 115px; }
+        .bottom .bottom_top .top_left p:nth-child(4) a {
+          color: #ff6600; }
+    .bottom .bottom_top .top_right {
+      width: 713px;
+      float: left; }
+      .bottom .bottom_top .top_right span {
+        cursor: pointer;
+        width: 126px;
+        float: left;
+        border-left: 1px solid #999;
+        padding-left: 14px; }
+        .bottom .bottom_top .top_right span li {
+          cursor: pointer;
+          color: #999;
+          font-size: 12px;
+          line-height: 19px; }
+        .bottom .bottom_top .top_right span li:nth-child(1) {
+          color: #000; }
+  .bottom .bottom_bottom {
+    width: 975px;
+    height: 105px;
+    margin: 0 auto;
+    position: relative; }
+    .bottom .bottom_bottom ul {
+      float: left;
+      width: 100%;
+      margin-bottom: 12px; }
+      .bottom .bottom_bottom ul li {
+        cursor: pointer;
+        float: left;
+        color: #333;
+        font-size: 12px;
+        margin-right: 20px; }
+    .bottom .bottom_bottom p {
+      cursor: pointer;
+      margin-bottom: 11px;
+      color: #999;
+      font-size: 12px;
+      line-height: 12px; }
+    .bottom .bottom_bottom img {
+      cursor: pointer;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 36px;
+      height: 50px; }
 
 /*# sourceMappingURL=top.css.map */
