@@ -47,9 +47,11 @@ input:focus {
 .top, .middle {
   width: 1213px; }
 
+body, button, input, txt {
+  font-family: "Microsoft YaHei","Hiragino Sans GB"; }
+
 .top {
   height: 100px;
-  background: green;
   margin: 0 auto;
   background: url(../img/register/headbg.jpg) repeat-x left bottom; }
   .top p {
@@ -72,9 +74,185 @@ input:focus {
 
 .middle_con {
   width: 830px;
-  margin: 50px auto 60px;
-  background: #ccc;
+  margin: 50px auto 0;
   min-height: 600px;
   _height: 600px; }
+  .middle_con .m_con_left {
+    width: 400px;
+    float: left;
+    padding-right: 80px;
+    border-right: 1px solid #e6e6e6; }
+    .middle_con .m_con_left .form-item {
+      position: relative;
+      border: solid 1px #ddd;
+      width: 398px;
+      height: 52px;
+      line-height: 52px; }
+      .middle_con .m_con_left .form-item input {
+        border: 0;
+        margin-left: 20px;
+        height: 30px;
+        width: 200px; }
+      .middle_con .m_con_left .form-item label {
+        display: inline-block;
+        float: left;
+        width: 120px;
+        line-height: 52px;
+        text-align: center;
+        font-size: 14px; }
+      .middle_con .m_con_left .form-item .btn-phonecode {
+        position: absolute;
+        right: 3px;
+        top: 3px;
+        width: 110px;
+        height: 46px;
+        border: none;
+        background: #f2f2f2;
+        color: #333;
+        padding: 0; }
+      .middle_con .m_con_left .form-item .img-code {
+        position: absolute;
+        right: 3px;
+        top: 3px;
+        width: 110px;
+        height: 46px;
+        cursor: pointer;
+        background: #f2f2f2;
+        text-align: center; }
+      .middle_con .m_con_left .form-item img {
+        border: 0;
+        vertical-align: middle; }
+    .middle_con .m_con_left .input-tip {
+      color: #c5c5c5;
+      height: 20px;
+      font-size: 12px;
+      padding-top: 5px; }
+    .middle_con .m_con_left .sub {
+      background: #ffc400;
+      width: 398px;
+      height: 52px;
+      line-height: 52px; }
+      .middle_con .m_con_left .sub input {
+        border: 0;
+        background: #ffc400;
+        width: 398px;
+        text-align: center;
+        height: 52px;
+        cursor: pointer;
+        font-size: 16px; }
+  .middle_con .m_con_right {
+    width: 280px;
+    float: right;
+    margin-left: 30px;
+    cursor: pointer; }
+    .middle_con .m_con_right .right_top {
+      display: block;
+      width: 200px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #ddd; }
+      .middle_con .m_con_right .right_top a {
+        color: #666;
+        font-size: 14px;
+        display: block;
+        width: 50px;
+        height: 48px;
+        float: left;
+        background: url(../img/register/icon.png) no-repeat 0 -51px; }
+    .middle_con .m_con_right .right_bottom {
+      margin-top: 30px;
+      display: block; }
+      .middle_con .m_con_right .right_bottom a {
+        color: #666;
+        font-size: 14px;
+        display: block;
+        width: 50px;
+        height: 48px;
+        float: left;
+        background: url(../img/register/icon.png) no-repeat -50px -51px; }
+
+.bottom {
+  height: 278px;
+  padding-top: 67px; }
+  .bottom .bottom_top {
+    width: 983px;
+    height: 150px;
+    margin: 0 auto; }
+    .bottom .bottom_top .top_left {
+      width: 250px;
+      float: left;
+      padding-top: 20px; }
+      .bottom .bottom_top .top_left p {
+        cursor: pointer;
+        font-size: 12px;
+        line-height: 12px;
+        color: #999; }
+      .bottom .bottom_top .top_left p:nth-child(1) {
+        margin-left: 25px;
+        margin-bottom: 12px; }
+        .bottom .bottom_top .top_left p:nth-child(1) a {
+          color: #333; }
+      .bottom .bottom_top .top_left p:nth-child(2) {
+        margin-left: 25px;
+        margin-bottom: 26px; }
+        .bottom .bottom_top .top_left p:nth-child(2) a {
+          color: #333; }
+      .bottom .bottom_top .top_left p:nth-child(3) {
+        margin-left: 80px;
+        margin-bottom: 19px; }
+        .bottom .bottom_top .top_left p:nth-child(3) a {
+          color: #ff6600; }
+      .bottom .bottom_top .top_left p:nth-child(4) {
+        margin-left: 115px; }
+        .bottom .bottom_top .top_left p:nth-child(4) a {
+          color: #ff6600; }
+    .bottom .bottom_top .top_right {
+      width: 713px;
+      float: left; }
+      .bottom .bottom_top .top_right span {
+        cursor: pointer;
+        width: 126px;
+        float: left;
+        border-left: 1px solid #999;
+        padding-left: 14px; }
+        .bottom .bottom_top .top_right span li {
+          cursor: pointer;
+          color: #999;
+          font-size: 12px;
+          line-height: 19px; }
+        .bottom .bottom_top .top_right span li:nth-child(1) {
+          color: #000; }
+  .bottom .bottom_bottom {
+    width: 975px;
+    height: 105px;
+    margin: 0 auto;
+    position: relative; }
+    .bottom .bottom_bottom ul {
+      float: left;
+      width: 100%;
+      margin-bottom: 12px; }
+      .bottom .bottom_bottom ul li {
+        cursor: pointer;
+        float: left;
+        color: #333;
+        font-size: 12px;
+        margin-right: 20px; }
+    .bottom .bottom_bottom p {
+      cursor: pointer;
+      margin-bottom: 11px;
+      color: #999;
+      font-size: 12px;
+      line-height: 12px; }
+    .bottom .bottom_bottom img {
+      cursor: pointer;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 36px;
+      height: 50px; }
+
+::-webkit-input-placeholder {
+  color: #e2d5cc;
+  font-size: 14px;
+  line-height: 14px; }
 
 /*# sourceMappingURL=register.css.map */

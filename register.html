@@ -12,17 +12,157 @@
 			<p>欢迎注册</p>
 			<p><span>已有账号？</span><a href="login.html">请登录</a></p>
 		</div>
-		<div class="middle">
-			<div class="middle_con">
+		<div class="middle clearfix">
+			<div class="middle_con clearfix">
 				<div class="m_con_left">
-					<div>
-							
+					<form action="">
+						<div class="form-item username" data-topic="支持中文、字母、数字、“-”“_”的组合，4-20个字符">
+							<label for="">用    户    名</label>
+							<input type="text" placeholder="您的账户名和登录名"  onfocus="this.placeholder=''" onblur="this.placeholder='您的账户名和登录名'" />
+						</div>
+						<div class="input-tip">
+							<span></span>
+						</div>
+						<div class="form-item" data-topic="建议使用字母、数字和符号两种及以上的组合，6-20个字符">
+							<label for="">设 置 密 码</label>
+							<input type="text" placeholder="建议至少使用两种字符组合"  onfocus="this.placeholder=''" onblur="this.placeholder='建议至少使用两种字符组合'"/>
+						</div>
+						<div class="input-tip">
+							<span></span>
+						</div>
+						<div class="form-item" data-topic="请再次输入密码">
+							<label for="">确 认 密 码</label>
+							<input type="text" placeholder="请再次输入密码"  onfocus="this.placeholder=''" onblur="this.placeholder='请再次输入密码'"/>
+						</div>
+						<div class="input-tip">
+							<span></span>
+						</div>
+						<div class="form-item" data-topic="你可以用该手机登录和找回密码">
+							<label for="">号  码</label>
+							<input type="text" placeholder="建议使用常用的号码"  onfocus="this.placeholder=''" onblur="this.placeholder='建议使用常用的号码'"/>
+						</div>
+						<div class="input-tip">
+							<span></span>
+						</div>
+						<div class="form-item" data-topic="看不清？点击图片更换验证码">
+							<label for="">用    户    名</label>
+							<input type="text" placeholder="您的账户名和登录名"  onfocus="this.placeholder=''" onblur="this.placeholder='您的账户名和登录名'"/>
+						</div>
+						<div class="input-tip">
+							<span></span>
+						</div>
+						<div class="form-item yzm"  data-topic="请输入验证码">
+							<label for="">验 证 码</label>
+							<input type="text" placeholder="请输入验证码"  onfocus="this.placeholder=''" onblur="this.placeholder='请输入验证码'"/>
+							<txt class="img-code" title="换一换" id="imgAuthCode">1 2 3 4</txt>
+						</div>
+						<div class="input-tip">
+							<span></span>
+						</div>
+						<div class="form-item">
+							<label for="">手机验证码</label>
+							<input type="text" placeholder="请输入手机验证码"  onfocus="this.placeholder=''" onblur="this.placeholder='请输入手机验证码'"/>
+							<button id="getPhoneCode" class="btn-phonecode" type="button">获取验证码</button>
+						</div>
+						<div class="input-tip">
+							<span></span>
+						</div>
+						<div class="sub">
+							<input type="submit" value="立即注册" />
+						</div>
+					</form>
+				</div>
+				<div class="m_con_right">
+					<div class="right_top">
+						<a href="#"></a>
+						<p>企业用户注册</p>
+					</div>
+					<div class="right_bottom">
+						<a href="#"></a>
+						<p>INTERNATIONAL<br>CUSTOMERS</p>
 					</div>
 				</div>
-				<div class="m_con_right"></div>
 			</div>
 		</div>
-		<div class="bottom"></div>
+		
+		<!--底部实现-->
+	<div class="bottom">
+		<div class="bottom_top">
+			<div class="top_left">
+				<p>订购/咨询热线  ：<a href="#"> 400-883-6900</a></p>
+				<p>投诉/建议热线 ：<a href="#"> 400-883-9315</a></p>
+				<p>周一至周六 :<a href="#"> 08:00-21:00</a></p>
+				<p>周日 :<a href="#"> 09:00-18:00</a></p>
+			</div>
+			<div class="top_right">
+				<span>
+					<ul>
+						<li>购物指南</li>
+						<li>购物流程</li>
+						<li>会员说明</li>
+						<li>积分说明</li>
+						<li>优惠券</li>
+						<li>第三方服务说明</li>
+						<li>团购规则</li>
+					</ul>
+				</span>
+				<span>
+					<ul>
+						<li>支付方式</li>
+						<li>在线支付</li>
+						<li>体验点付款</li>
+						<li>货到付款</li>
+						<li>银行转账</li>
+						<li>邮局汇款</li>
+						<li>分期付款</li>
+					</ul>
+				</span>
+				<span>
+					<ul>
+						<li>配送方式</li>
+						<li>配送服务说明</li>
+						<li>验货签收与拒收</li>
+						<li>包装说明</li>
+						<li>24小时送达</li>
+						<li>免运费说明</li>
+					</ul>
+				</span>
+				<span>
+					<ul>
+						<li>售后服务</li>
+						<li>飞虎自营售后政策</li>
+						<li>第三方卖家售后政策</li>
+						<li>退换货流程</li>
+						<li>退款说明</li>
+						<li>发票说明</li>
+						<li>客服邮箱</li>
+					</ul>
+				</span>
+				<span>
+					<ul>
+						<li>特色服务</li>
+						<li>产品知识</li>
+						<li>简易故障排除</li>
+						<li>软件下载</li>
+					</ul>
+				</span>
+				
+			</div>
+		</div>
+		<div class="bottom_bottom">
+			<ul>
+				<li>常见问题</li>
+				<li>法律说明</li>
+				<li>联系客服</li>
+				<li>新闻中心</li>
+				<li>意见箱</li>
+			</ul>
+			<p>增值电信业务经营许可证：粤B2-20130551 | 网站备案：粤ICP备14036938号</p>
+			<p>食品流通许可证：SP4403112014007826 | 食品流通许可证：SP1103021110002595 </p>
+			<p> Copyright © 2009-2017 深圳市理约云信息管理有限公司.All Rights Reserved  </p>
+			<img src="img/govIcon.gif" alt="" />
+		</div>
+	</div>
 	</body>
 </html>
-<script src="js/require.js" data-main="js/main"></script>
+<script src="js/require.js" data-main="js/main_reg"></script>

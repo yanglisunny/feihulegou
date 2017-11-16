@@ -1,14 +1,10 @@
 requirejs.config({
 	paths : {
 		jquery : "jquery-1.11.1.min",
-		lb : "lunbo",
-		xd : "xiding",
-		lt : "louti",
-		time : "daojishi",
-		register : "register"
+		index : "index"
 	}
 })
-requirejs(["jquery","lb","xd","lt","time","register"],function($,lb,xd,lt,time,register){
+requirejs(["jquery","index"],function($,index){
 	//顶部二级菜单实现
 	$(".top>.top1>.top1_right>.myacount").mouseenter(function(){
 		$(this).find("b").css("background-position-y","-5px");
@@ -29,13 +25,11 @@ requirejs(["jquery","lb","xd","lt","time","register"],function($,lb,xd,lt,time,r
 	})
 	
 	
-		lb.lunbo();
+		index.lunbo();
 		$(window).scroll(function(){
-			xd.xiding();
+			index.xiding();
 		})
-			lt.louti();
-			time.daojishi();
+			index.louti();
+			index.daojishi();
 //			console.log(2);
-
-	
 })
