@@ -245,7 +245,7 @@ input:focus {
   background: #f6f6f6;
   position: absolute;
   left: 32px;
-  top: 170px; }
+  top: 0; }
   .categorybox div {
     width: 190px; }
     .categorybox div a {
@@ -256,12 +256,12 @@ input:focus {
       color: #000; }
       .categorybox div a:hover {
         color: #FF8C00;
-        background: #fff; }
+        background: rgba(255, 255, 255, 0.3); }
 
 .notice {
   position: absolute;
   left: 1000px;
-  top: 170px;
+  top: 0;
   width: 227px;
   cursor: pointer; }
   .notice .notice_top {
@@ -295,7 +295,17 @@ input:focus {
       width: 190px;
       height: 250px;
       background: url(../img/miaosha_bj.jpg) no-repeat 0 0;
-      cursor: pointer; }
+      cursor: pointer;
+      position: relative; }
+      .miaosha_con .miaosha .time span {
+        position: absolute;
+        display: block;
+        height: 30px;
+        width: 145px;
+        left: 23px;
+        top: 169px;
+        font-size: 25px;
+        color: #fff; }
     .miaosha_con .miaosha .product {
       float: left;
       position: relative; }

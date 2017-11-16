@@ -232,13 +232,13 @@ cursor: pointer;
     background:#f6f6f6;
     position:absolute;
     left:32px;
-    top:170px;
+    top:0;
     div{
          width:190px;
           a{
               &:hover{
                   color:#FF8C00;
-                  background:#fff;
+                  background:rgba(255,255,255,.3);
               }
               display:block;
               height:32px;
@@ -253,7 +253,7 @@ cursor: pointer;
 .notice{
     position:absolute;
     left:1000px;
-    top:170px;
+    top:0;
 //  background:#fff;
     width:227px;
     cursor: pointer;
@@ -295,6 +295,17 @@ cursor: pointer;
             height:250px;
             background:url(../img/miaosha_bj.jpg) no-repeat 0 0; 
             cursor: pointer;
+            position:relative;
+            span{
+                position:absolute;
+                display:block;
+                height:30px;
+                width:145px;
+                left:23px;
+                top:169px;
+                font-size:25px;
+                color:#fff;
+            }
         }
         .product{
             float:left;

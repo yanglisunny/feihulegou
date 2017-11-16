@@ -4,7 +4,6 @@ define(["require"],function(){
 			var flag=true;
 			var index=0;
 			$(window).scroll(function(){
-				if(flag){
 					var sTop = $(document).scrollTop();
 					if(sTop>=($(".Louti").eq(0).offset().top-$(window).height())){
 						$("#LoutiNav").css("display","block");
@@ -18,20 +17,16 @@ define(["require"],function(){
 							$("#LoutiNav>ul>li").eq($(this).index()).addClass("las")
 																	.siblings()
 																	.removeClass("las")
-						}
-					})
-				}
-				
-			})
+						
+					}
+				})
+				})
 				
 				$("#LoutiNav>ul").on("click","li:not('.last')",function(){
-					flag=false;
 					$(this).addClass("las")
 							.siblings()
 							.removeClass("las")
-					$("html,body").animate({"scrollTop":($(".Louti").eq($(this).index()).offset().top)},1000,function(){
-						flag=true;
-					})
+					$("html,body").animate({"scrollTop":($(".Louti").eq($(this).index()).offset().top)},1000)
 				}).on("mouseenter","li:not('.last')",function(){
 					$(this).addClass("las")
 				}).on("mouseleave","li",function(){
@@ -40,11 +35,8 @@ define(["require"],function(){
 				})
 				
 				$(".last").click(function(){
-					flag=false;
 					$("#LoutiNav>ul>li:not('.last')").removeClass("las");
-					$("html,body").animate({"scrollTop":0},1000,function(){
-						flag=true;
-					})
+					$("html,body").animate({"scrollTop":0},1000)
 				})
 			
 		}

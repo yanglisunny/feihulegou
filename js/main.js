@@ -3,10 +3,11 @@ requirejs.config({
 		jquery : "jquery-1.11.1.min",
 		lb : "lunbo",
 		xd : "xiding",
-		lt : "louti"
+		lt : "louti",
+		time : "daojishi"
 	}
 })
-requirejs(["jquery","lb","xd","lt"],function($,lb,xd,lt){
+requirejs(["jquery","lb","xd","lt","time"],function($,lb,xd,lt,time){
 	//顶部二级菜单实现
 	$(".top>.top1>.top1_right>.myacount").mouseenter(function(){
 		$(this).find("b").css("background-position-y","-5px");
@@ -32,6 +33,7 @@ requirejs(["jquery","lb","xd","lt"],function($,lb,xd,lt){
 			xd.xiding();
 		})
 			lt.louti();
+			time.daojishi();
 //			console.log(2);
 	
 	
