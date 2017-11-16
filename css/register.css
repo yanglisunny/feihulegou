@@ -1,0 +1,80 @@
+@charset "UTF-8";
+html, body, dd, dl, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, ol, p, select, td, textarea, th, ul, li {
+  margin: 0;
+  padding: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 16px;
+  font-weight: 100; }
+
+body {
+  font-family: "微软雅黑"; }
+
+ul, ol, li {
+  list-style: none; }
+
+a, u {
+  text-decoration: none; }
+
+i, em {
+  font-style: normal; }
+
+b, strong {
+  font-weight: 100; }
+
+img {
+  display: block;
+  border: 0; }
+
+.clearfix:after {
+  content: ".";
+  clear: both;
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden; }
+
+.clearfix {
+  zoom: 1; }
+
+input:focus {
+  outline: none; }
+
+.top1, .logo, .miaosha, .begin, #main, .bottom {
+  width: 1200px;
+  margin: 0 auto; }
+
+.top, .middle {
+  width: 1213px; }
+
+.top {
+  height: 100px;
+  background: green;
+  margin: 0 auto;
+  background: url(../img/register/headbg.jpg) repeat-x left bottom; }
+  .top p {
+    float: left;
+    height: 100px;
+    line-height: 100px; }
+  .top .logo {
+    background: url(../img/logo.png) no-repeat 0 center;
+    width: 250px; }
+  .top p:nth-child(2) {
+    font-size: 28px;
+    color: #333; }
+  .top p:nth-child(3) {
+    float: right;
+    font-size: 16px; }
+    .top p:nth-child(3) span {
+      color: #999; }
+    .top p:nth-child(3) a {
+      color: #333; }
+
+.middle_con {
+  width: 830px;
+  margin: 50px auto 60px;
+  background: #ccc;
+  min-height: 600px;
+  _height: 600px; }
+
+/*# sourceMappingURL=register.css.map */

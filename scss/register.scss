@@ -1,0 +1,41 @@
+@charset "UTF-8";
+@import "public.scss";
+.top,.middle{width:1213px;}
+.top{
+     height:100px;
+    background:green;
+    margin:0 auto;
+    background:url(../img/register/headbg.jpg) repeat-x left bottom;
+    p{
+        float:left;
+        height:100px;
+        line-height:100px;
+    }
+    .logo{
+        background:url(../img/logo.png) no-repeat 0 center;
+        width:250px;
+    }
+    p:nth-child(2){
+        font-size:28px;
+        color:#333;
+    }
+     p:nth-child(3){
+         float:right;
+        font-size:16px;
+        span{
+            color:#999;
+        }
+        a{
+            color:#333;
+        }
+    }
+}
+
+//middle
+.middle_con{
+    width:830px;
+    margin:50px auto 60px;
+    background:#ccc;
+    min-height:600px;
+    _height:600px;
+}
