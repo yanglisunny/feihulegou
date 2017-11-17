@@ -1,0 +1,182 @@
+@charset "UTF-8";
+.middle_bj{
+    width:100%;
+    height:465px;
+    background:url(../img/register/login_bg_x.jpg) repeat-x 0 0 ;
+    .middle{
+        background:url(../img/register/login_bg.jpg) no-repeat 0 0 ;
+        min-height:400px;
+         _height:400px;
+         margin-top:30px;
+        .middle_con{
+            cursor:pointer;
+            background:#fff;
+            float:right;
+            width:350px;
+            height:429px;
+            min-height:300px;
+            margin-top:0;
+            position:relative;
+            i{
+                cursor:pointer;
+                display:block;
+                float:left;
+                width:174px;
+                height:50px;
+                text-align:center;
+                line-height:50px;
+                border-right:1px solid #ccc;
+                border-bottom:1px solid #ccc;
+            }
+            .xxk_bt{
+                background:#ffc400;
+            }
+            .login_box{
+                height:250px;
+                text-align:center;
+                line-height:250px;
+                .login1{
+//                  display:none;
+                     height:150px;
+                    padding-top:150px;
+                    img{
+                        margin:0 auto;
+                    }
+                    
+                }
+                .login2{
+                    display:none;
+                    form{
+                        height:250px;
+                       margin-top:120px;padding-left:20px;
+                       .user,.pwd{
+                           position:relative;
+                           border:1px solid #bdbdbd;
+                           width:304px;
+                           height:38px;
+                           margin-bottom:25px;
+                           input{
+                                padding-left:10px;
+                               position:absolute;
+                               left:39px;
+                               top:0;
+                               height:38px;
+                               width:200px;
+                               border:0;
+                           }
+                           label{
+                               cursor:pointer;
+                               width:38px;
+                               height:38px;
+                               display:block;
+                               border-right:1px solid #bdbdbd;
+                               background:url(../img/register/pwd-icons-new.png) no-repeat 0 0;
+                           }
+                           .clear{
+                               width:50px;
+                               height:38px;
+                               display:none;
+                               position:absolute;
+                               right:0;
+                               top:0;
+                               line-height:38px;
+                               color:#ccc;
+                           }
+                       }
+                       .pwd{
+                           label{
+                               cursor:pointer;
+                               background:url(../img/register/pwd-icons-new.png) no-repeat -48px 0;
+                           }
+                       }
+                       .topic{
+                           width:200px;
+                           height:20px;
+                           line-height:20px;
+//                        background:#ccc; 
+                          display:block;
+                          font-size:8px;
+                          color:red;
+                       }
+                       .forget{
+                           cursor:pointer;
+                           position:relative;
+                           height:30px;
+                           line-height:30px;
+                           right:20px;
+                           float:right;
+                           font-size:14px;
+                           color:#666;
+                       }
+                       .sub{
+                           cursor:pointer;
+                            position:relative;
+                            height:35px;
+                            line-height:35px;
+                            background:#ffc400;
+                            width:305px;
+                            border:0;
+                            bottom:105px;
+                            left:-11px;
+                           
+                       } 
+                    }
+                }
+                
+            }
+             .bottom_con{
+                    background:#fcfcfc;
+                    width:325px;
+                    height:43px;
+                    padding-top:16px;
+                    padding-left:15px;
+                    padding-right:10px;
+                    position:absolute;
+                    left:0;
+                    top:370px;
+                    .qq{
+                        width:70px;
+                        float:left;
+                        cursor:pointer;
+                        b{
+                            width:18px;height:18px;
+                            background:url(../img/register/QQ-weixin.png) no-repeat 0 0 ;
+                            display:block;
+                            float:left;
+                           
+                        }
+                          span{padding-left:5px;}
+                    }
+                    .wx{
+                        cursor:pointer;
+                        width:70px;
+                        float:left;
+                        padding-left:15px;
+                        border-left:1px solid #ebd9cf;
+                        
+                        b{
+                            width:18px;height:18px;
+                            background:url(../img/register/QQ-weixin.png) no-repeat -20px 0 ;
+                            display:block;
+                            float:left;
+
+                        }
+                        span{padding-left:5px;}
+                    }
+                    .zc{
+                        float:right;
+                        a{color:#ffc400;font-size:14px;}
+                    }
+                }
+        }
+        
+    }
+    
+}
+
+
+::-webkit-input-placeholder{
+    color: #e2d5cc;
+    font-size: 14px;
+    line-height: 14px;
+}

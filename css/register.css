@@ -82,6 +82,15 @@ body, button, input, txt {
     float: left;
     padding-right: 80px;
     border-right: 1px solid #e6e6e6; }
+    .middle_con .m_con_left .i-status {
+      display: block;
+      position: absolute;
+      display: none;
+      width: 16px;
+      height: 16px;
+      top: 20px;
+      right: 20px;
+      background: url(../img/register/icon.png) no-repeat 0 -117px; }
     .middle_con .m_con_left .form-item {
       position: relative;
       border: solid 1px #ddd;
@@ -127,6 +136,28 @@ body, button, input, txt {
       height: 20px;
       font-size: 12px;
       padding-top: 5px; }
+      .middle_con .m_con_left .input-tip .tip_strong {
+        width: 19px;
+        height: 20px;
+        display: block;
+        float: left;
+        background: url(../img/register/icon.png) no-repeat -32px -133px; }
+      .middle_con .m_con_left .input-tip .tip_middle {
+        width: 16px;
+        height: 18px;
+        display: block;
+        float: left;
+        background: url(../img/register/icon.png) no-repeat -33px -116px; }
+      .middle_con .m_con_left .input-tip .tip_low {
+        width: 18px;
+        height: 20px;
+        display: block;
+        float: left;
+        background: url(../img/register/icon.png) no-repeat -16px -133px; }
+      .middle_con .m_con_left .input-tip span {
+        display: block;
+        float: left;
+        margin-left: 5px; }
     .middle_con .m_con_left .sub {
       background: #ffc400;
       width: 398px;

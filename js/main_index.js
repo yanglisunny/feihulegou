@@ -1,10 +1,11 @@
 requirejs.config({
 	paths : {
 		jquery : "jquery-1.11.1.min",
-		index : "index"
+		index : "index",
+		pub : "public"
 	}
 })
-requirejs(["jquery","index"],function($,index){
+requirejs(["jquery","index","pub"],function($,index,pub){
 	//顶部二级菜单实现
 	$(".top>.top1>.top1_right>.myacount").mouseenter(function(){
 		$(this).find("b").css("background-position-y","-5px");
@@ -31,5 +32,21 @@ requirejs(["jquery","index"],function($,index){
 		})
 			index.louti();
 			index.daojishi();
-//			console.log(2);
+		window.onload=function(){
+			
+			if(document.cookie){
+				var s = JSON.parse(pub.getCookie(3)).uname;
+				$(".top1_left").css("display","none");
+				$(".top1_left2").html(s+" 您好,欢迎登录飞虎乐购");
+				$(".top1_left2").css({"color":"#333","font-size":"14px","font-family":"Microsoft Yahei"});
+			}
+		/*$("#main img").mouseenter(function(){
+			console.log(1)
+			$(this).css("width","120%")
+		}).mouseleave(function(){
+			$(this).css("width","100%")
+		})*/
+		}
+		
+		
 })
