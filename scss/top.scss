@@ -111,6 +111,7 @@ $size:12px;
                  line-height:29px;
              }
              a{ 
+                 color:#000;
                  margin-top:38px;
                  float:left;
                  width:80px;
@@ -137,7 +138,7 @@ $size:12px;
     .all{  height:40px;
         line-height:40px;
         float:left;
-        margin-left:72px;
+        margin-left:45px;
         margin-right:55px;
         font-size:18px;
     }
@@ -146,17 +147,17 @@ $size:12px;
         margin-left:450px;
         width:122px;
         height:24px;
-        
         font-size:12px;
         margin-top:7px;
         text-align:center;
         line-height:24px;
         a{
-            width:122px;
+            color:#000;
+            width:140px;
             height:24px;
             display:block;
             background:#fff; 
-            background:url(../img/shopcart.png) no-repeat -6px -75px ;
+            background:url(../img/shopcart.png) no-repeat 1px -75px ;
             em{color:red;}
         }
     }
@@ -272,12 +273,19 @@ cursor: pointer;
          padding-top:20px;
          background:rgba(255,255,255,.5);
         span{
+            &:hover{color:red;}
              line-height:12px;   
              margin-left:23px;
             margin-bottom:9px;
             font-size:12px;
              display:block;
+             margin-right:12px;
+             overflow:hidden;
+             white-space:nowrap;
         }
+         span:nth-child(1),span:nth-child(2){
+             color:red;
+         }
     }
 }
 
@@ -412,6 +420,7 @@ cursor: pointer;
                     height:30px;
                     padding:25px 0 0;
                     a{
+                        &:hover{color:red;}
                         color:#000;
                         margin: 20px 10px 10px;
                         font-size: 14px;
@@ -584,6 +593,7 @@ cursor: pointer;
                  border-left:1px solid #999;
                  padding-left:14px;
                  li{
+                     &:hover{color:green;}
                       cursor: pointer;
                      color:#999;
                      font-size:12px;
@@ -611,6 +621,7 @@ cursor: pointer;
                 color:#333;
                 font-size:12px;
                 margin-right:20px;
+                &:hover{color:green;}
             }
         }
         p{

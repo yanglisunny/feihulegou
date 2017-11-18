@@ -40,7 +40,7 @@ img {
 input:focus {
   outline: none; }
 
-.top1, .logo, .miaosha, .begin, #main, .bottom {
+.top1, .logo, .nav_con, .miaosha, .begin, #main, .bottom, .zhzq_con {
   width: 1200px;
   margin: 0 auto; }
 

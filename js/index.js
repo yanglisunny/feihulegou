@@ -4,9 +4,13 @@ define(["require"],function(){
 			var now = new Date();//当前时间
 			    var isjx=0;
 			    function GetServerTime(){
+			    	console.log(now)
 			            var d= now.getYear()+"/"+now.getMonth()+"/"+now.getDate()+" 10:00:00";//设置每天的16.:30 为节点
-			            var urodz = new Date(d); 
-			            now.setTime(now.getTime()+250); 
+			          console.log("d:"+d)
+			          var urodz = new Date(d);//定义固定时间
+//			            console.log(d+","+urodz+",,"+now);
+			            now.setTime(now.getTime()+250); //定时器调用，为了使时间同步
+//			            console.log(urodz+"，"+ now+"，，，，"+ (urodz-now))
 			            days = (urodz - now) / 1000 / 60 / 60 / 24; 
 			            daysRound = Math.floor(days); 
 			            hours = (urodz - now) / 1000 / 60 / 60 - (24 * daysRound); 
@@ -15,9 +19,10 @@ define(["require"],function(){
 			            minutesRound = Math.floor(minutes); 
 			            seconds = (urodz - now) / 1000 - (24 * 60 * 60 * daysRound) - (60 * 60 * hoursRound) - (60 * minutesRound); 
 			            secondsRound = Math.round(seconds);          
-			            if((hoursRound==0 && minutesRound==0 && secondsRound==0)){//都等于0 说明过了16:30
+			           /* if((hoursRound==0 && minutesRound==0 && secondsRound==0)){
 			                isjx=1;
-			            }
+			            }*/
+			            //将时间拼接
 			                if(hoursRound < 10)    
 			   					hoursRound = "0" + hoursRound; 
 			   				if(minutesRound < 10)    
@@ -27,11 +32,11 @@ define(["require"],function(){
 			
 			   					secondsRound = "0" + secondsRound; 
 			            //判断今天还是明天
-			            if(isjx==0 && (parseFloat(now.toTimeString().substr(0,2)+ now.toTimeString().substr(3,3).substr(0,2)+now.toTimeString().substr(6,7) )<=162959)){
+//			            if(isjx==0 && (parseFloat(now.toTimeString().substr(0,2)+ now.toTimeString().substr(3,3).substr(0,2)+now.toTimeString().substr(6,7) )<=162959)){
 			               $(".sp1").html (hoursRound + "：" + minutesRound + "：" + secondsRound ) ; 
-			            }else  {
-			                 $(".sp1").html (hoursRound + "：" + minutesRound + "：" + secondsRound );
-			            }
+//			            }else  {
+//			                 $(".sp1").html (hoursRound + "：" + minutesRound + "：" + secondsRound );
+//			            }
 			    }
 			   setInterval(GetServerTime,250);
 			   },

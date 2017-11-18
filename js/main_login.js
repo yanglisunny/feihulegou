@@ -14,9 +14,28 @@ requirejs(["jquery","login","pub"],function($,login,pub){
 												.siblings()
 												.css("display","none")
 	})
+	$(".user").delegate(".clear","click",function(){
+	 	 console.log(1)
+	 	 console.log($(this).prev())
+		$(this).prev().val("");
+		$(this).css("display","none");
+	})
 	$("input").focus(function(){
 		$(".topic").html("");
+		console.log($(this).index())
+		$(this).next().css("display","block");
 	})
+	$("input").blur(function(){
+		if($(this).val().length==0){
+			$(this).next().css("display","none");
+		}
+	})
+	
+	
+	/*$(".clear").click(function(){
+		console.log(1)
+		$(this).prev().val("");
+	})*/
 	$("form").submit(function(){
 		var lname = $("#user_name").val();
 		var lpwd = $("#password").val();

@@ -46,7 +46,8 @@ requirejs(["jquery","index","pub"],function($,index,pub){
 		}).mouseleave(function(){
 			$(this).css("width","100%")
 		})*/
-		}
+		
+	}
 		
 		
 })
