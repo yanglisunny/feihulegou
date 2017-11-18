@@ -230,6 +230,7 @@ $size:12px;
         .zhzq_con_center{
             padding-top:10px;
             .zhzq_con_CL{
+                float:left;
                 width:230px;
                 min-height:1000px;
                 background:#ccc;
@@ -480,8 +481,64 @@ $size:12px;
                 
                 
             }
+            
+            
+            ///////
+            .zhzq_con_CR{
+                min-height:1000px;
+                padding-left:10px;
+                float:right;
+                width:960px;
+                .crtop{
+                    height:240px;
+                    margin-bottom:10px;
+                    .crtop_left{
+                        width:720px;
+                        float:left;
+                    }
+                    .crtop_right{
+                        border:1px solid #ddd;
+                        float:right;
+                        width:228px;
+                        height:240px;
+                        dl{
+                            dt{
+                                padding-left:11px;
+                                height:35px;
+                                line-height:35px;
+                                background:#fafafa;
+                                color:#c7012c;
+                                font-size:18px;
+                            }
+                            dd{
+                                color:#666;
+                                font-size:12px;
+                                padding-left:2px;
+                                img{
+                                    margin:0 auto;
+                                }
+                            }
+                        }
+                    }
+                }
+                //选项卡
+                .crxxk{
+                    height:100px;
+                    background:#ccc;
+                }
+                
+                
+            }
         }     
     }
+}
+
+//
+.zhzq_con_bottom .kouhao {
+    height: 47px;
+    overflow: hidden;
+    line-height: 400px;
+    background: url(../img/list/sl_footer.png) no-repeat 0 0;
 }
 
 
