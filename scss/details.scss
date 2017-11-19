@@ -159,13 +159,12 @@ $size:12px;
             left:687px;
         }
     }
-    span{display:block;float:left;margin-right:22px;
-             margin:10px 5px 0 30px;
+    span{display:block;float:left;margin-right:22px;font-size:16px;
+            margin:10px 5px 0 30px;
             padding:0 20px;
             cursor: pointer;
              font-family: Microsoft Yahei;
-            border-right:1px solid #fff;
-            font-size:16px;
+             border-right:1px solid #fff;
             &:hover{color:orange;
             }
         color:#fff;
@@ -211,15 +210,15 @@ $size:12px;
 }
 
 
-//综合专区
+
 #zhzq{
-    min-height:1000px;   
-    _height:1000px;
+    min-height:800px;   
+    _height:800px;
        
     .zhzq_con{
 //      background:#ccc;
-        min-height:1000px;   
-        _height:1000px;
+        min-height:800px;   
+        _height:800px;
         .zhzq_con_top{
             height:40px;
             border-bottom:1px solid #ddd;
@@ -244,11 +243,11 @@ $size:12px;
                 .left_1{
                     margin-top:5px;
                     width:220px;
-                    min-height:300px;
+                    min-height:100px;
                     border:5px solid #f1f1f1;
                     .nav-ul{
                         width:218px;
-                        min-height:500px;
+                        min-height:100px;
                         border:1px solid #ddd;
                         a{
                             display: block;
@@ -678,7 +677,12 @@ $size:12px;
     }
 }
 
-//
+
+
+
+
+
+
 .zhzq_con_bottom {
     width:1200px;
     height: 47px;
@@ -690,11 +694,6 @@ $size:12px;
         background: url(../img/list/sl_footer.png) no-repeat 0 0;
     }
 }
-
-
-
-
-
 
 .bottom{
     height:278px;

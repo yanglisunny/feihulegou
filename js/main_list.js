@@ -50,6 +50,15 @@ requirejs(["jquery","pub"],function($,pub){
 		$(this).find(".bigshow").css("display","block");
 	})
 	
+	$(".crxxk>.crxxk_top>li").mouseenter(function(){
+		$(this).addClass("show")
+				.siblings()
+				.removeClass("show")
+		$(".crxxk_bottom>li").eq($(this).index()).css("display","block")
+							 					  .siblings().css("display","none")
+		
+		
+	})
 })
 
 
