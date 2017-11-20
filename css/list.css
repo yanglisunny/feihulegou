@@ -175,25 +175,26 @@ input:focus {
       position: absolute;
       background: url(../img/list/sl_header_new.gif) no-repeat 0 0;
       top: -3px;
-      left: 546px; }
+      left: 527px; }
     .navs .nav_con .hot {
       width: 16px;
       height: 26px;
       position: absolute;
       background: url(../img/list/sl_header_hot.gif) no-repeat 0 0;
       top: -3px;
-      left: 687px; }
+      left: 653px; }
   .navs span {
     display: block;
     float: left;
-    margin-right: 22px;
-    margin: 10px 5px 0 30px;
+    margin: 10px 5px 0 15px;
     padding: 0 20px;
     cursor: pointer;
     font-family: Microsoft Yahei;
     border-right: 1px solid #fff;
     font-size: 16px;
     color: #fff; }
+    .navs span:nth-of-type(4) {
+      border-right: 0; }
     .navs span:hover {
       color: orange; }
   .navs .all {
@@ -201,7 +202,7 @@ input:focus {
     line-height: 40px;
     float: left;
     margin-left: 20px;
-    margin-right: 55px;
+    margin-right: 80px;
     font-size: 18px;
     color: #fff; }
   .navs .shopcart {

@@ -96,7 +96,7 @@ requirejs(["jquery","reg","public"],function($,reg,pub){
 			$(".pwd").next().find("i").removeClass("tip_strong");
 			$(".pwd").next().find("i").removeClass("tip_middle");
 			$(".pwd").next().find("i").removeClass("tip_low");
-			if(regular.test(txt)){
+			if(regular.test(txt) && txt){
 				$(".pwd").find("i").css("display","block");
 				$(".pwd").css("border-color","#ddd");
 				$(".pwd").next().find("span").css("color","#e2d5cc");
@@ -128,12 +128,17 @@ requirejs(["jquery","reg","public"],function($,reg,pub){
 		var userrepwdFlag = null;
 		$(".repwd>input").blur(function(){
 			focusflag=false;
-			if($(".pwd>input").val() == $(".repwd>input").val()){
+			if($(".pwd>input").val() == $(".repwd>input").val() && $(".repwd>input").val()){
 				$(".repwd").find("i").css("display","block");
 				$(".repwd").next().find("span").css("color","green");
 				$(".repwd").next().find("span").html("密码一致")
 				userrepwdFlag=true;
 			}else{
+				if(!$(".repwd>input").val()){
+					$(".repwd").next().find("span").html("密码不能为空");
+					$(".repwd").next().find("span").css("color","red");
+					return;
+				}
 				$(".repwd").next().find("span").css("color","red");
 				$(".repwd").next().find("span").html("密码不一致")
 				userrepwdFlag=false;

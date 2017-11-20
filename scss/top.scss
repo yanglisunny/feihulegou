@@ -479,6 +479,7 @@ cursor: pointer;
                                  height:150px;
                                  width:150px;
                                   margin:auto;
+                                  overflow:hidden;
                                  img{
                                      width:100%;
                                       transition: all 0.6s;  
@@ -491,19 +492,20 @@ cursor: pointer;
                              .Lright1_name{
                                  
                                  height:25px;
-                                 width:198px;
+                                 width:150px;
                                   line-height:25px;
                                   text-align:center;
+                                  overflow:hidden;
+                                   padding-left:15px;
                                  a{
-//                                   display:block;
+                                     display:block;
                                      font-size:12px;
-                                     line-height:12px;
                                      color:#000;
                                  }
                              }
                            .Lright1_price{
                                 line-height: 22px;
-                                display: inline-block;
+                                display: block;
                                 cursor: pointer;
                                 height: 22px;
                                 width:178px;

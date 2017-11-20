@@ -23,24 +23,21 @@ requirejs(["jquery","pub"],function($,pub){
 		$(this).css("background","");
 	})
 	
-	
 	//菜单收缩展开
 	$('.nav-item>a').click(function(){
-//      if (!$('.nav').hasClass('nav-mini')) {//展开
-            if ($(this).next().css('display') == "none") {
-                //未展开要展开
-                $('.nav-item').children('ul').slideUp(300);//将全部关闭
-                $(this).parent().siblings().animate({"height":"50px"},300)
-                $(this).parent().animate({"height":$(this).parent().height()+250},300)
-                $(this).next('ul').slideDown(300);//将当前的打开
-                $(this).parent('li').addClass('nav-show').siblings('li').removeClass('nav-show');
-            }else{
-                //收缩已展开
-                $(this).next('ul').slideUp(300);
-                $('.nav-item,.nav-show').removeClass('nav-show');
-                $(this).parent().animate({"height":$(this).parent().height()-250},300)
-            }
-//      }
+        if ($(this).next().css('display') == "none") {
+            //未展开要展开
+            $('.nav-item').children('ul').slideUp(300);//将全部关闭
+            $(this).parent().siblings().animate({"height":"50px"},300)
+            $(this).parent().animate({"height":$(this).parent().height()+250},300)
+            $(this).next('ul').slideDown(300);//将当前的打开
+            $(this).parent('li').addClass('nav-show').siblings('li').removeClass('nav-show');
+        }else{
+            //收缩已展开
+            $(this).next('ul').slideUp(300);
+            $('.nav-item,.nav-show').removeClass('nav-show');
+            $(this).parent().animate({"height":$(this).parent().height()-250},300)
+        }
     });
     
 	$(".zhzq_con_center .zhzq_con_CL .left_3 li").mouseover(function(){
@@ -56,8 +53,6 @@ requirejs(["jquery","pub"],function($,pub){
 				.removeClass("show")
 		$(".crxxk_bottom>li").eq($(this).index()).css("display","block")
 							 					  .siblings().css("display","none")
-		
-		
 	})
 })
 

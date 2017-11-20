@@ -4,9 +4,7 @@ define(["require"],function(){
 			var now = new Date();//当前时间
 			    var isjx=0;
 			    function GetServerTime(){
-			    	console.log(now)
 			            var d= now.getYear()+"/"+now.getMonth()+"/"+now.getDate()+" 10:00:00";//设置每天的16.:30 为节点
-			          console.log("d:"+d)
 			          var urodz = new Date(d);//定义固定时间
 //			            console.log(d+","+urodz+",,"+now);
 			            now.setTime(now.getTime()+250); //定时器调用，为了使时间同步

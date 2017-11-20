@@ -432,7 +432,8 @@ input:focus {
         .louti #main .Louti .Louti_middle .Lright .Lright1 .Lright1_img {
           height: 150px;
           width: 150px;
-          margin: auto; }
+          margin: auto;
+          overflow: hidden; }
           .louti #main .Louti .Louti_middle .Lright .Lright1 .Lright1_img img {
             width: 100%;
             transition: all 0.6s; }
@@ -440,16 +441,18 @@ input:focus {
               transform: scale(1.05); }
         .louti #main .Louti .Louti_middle .Lright .Lright1 .Lright1_name {
           height: 25px;
-          width: 198px;
+          width: 150px;
           line-height: 25px;
-          text-align: center; }
+          text-align: center;
+          overflow: hidden;
+          padding-left: 15px; }
           .louti #main .Louti .Louti_middle .Lright .Lright1 .Lright1_name a {
+            display: block;
             font-size: 12px;
-            line-height: 12px;
             color: #000; }
         .louti #main .Louti .Louti_middle .Lright .Lright1 .Lright1_price {
           line-height: 22px;
-          display: inline-block;
+          display: block;
           cursor: pointer;
           height: 22px;
           width: 178px;
