@@ -59,27 +59,27 @@ requirejs(["jquery","index","pub"],function($,index,pub){
 						var product = json[attr].list3[j];//一个商品对象
 						conStr1 += `<div class="Lright1">
 						<div class="Lright1_img">
-							<a href="#"><img src="img/${product.src}" alt="" /></a>
+							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>
 						</div>
 						<div class="Lright1_name">
-							<a href="#">${product.name}</a>
+							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.name}</a>
 						</div>
 						<div class="Lright1_price">
-							<a href="#">${product.price}</a>
+							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.price}</a>
 						</div>
 					</div>`
 					}
 					for( var j = 0 ; j < json[attr].list2.length ; j++ ){
 						var product = json[attr].list2[j];//一个商品对象
-						conStr2 += `<a href="#"><img src="img/${product.src}" alt="" /></a>`
+						conStr2 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list2" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>`
 					}
 					for( var j = 0 ; j < json[attr].list4.length ; j++ ){
 						var product = json[attr].list4[j];//一个商品对象
-						conStr4 += `<li><a href="#"><img src="img/${product.src}" alt="" /></a></li>`
+						conStr4 += `<li><a href="details.html?pid=${product.id}&cname=${attr}&position=list4" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a></li>`
 					}
 					for( var j = 0 ; j < json[attr].list1.length ; j++ ){
 						var product = json[attr].list1[j];//一个商品对象
-						conStr3 += `<a href="#">
+						conStr3 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list1" data-id="${product.id}">
 							<img src="img/${product.src}" alt="" />
 						</a>`
 					}
@@ -97,27 +97,27 @@ requirejs(["jquery","index","pub"],function($,index,pub){
 						var product = json[attr].list3[j];//一个商品对象
 						conStr1 += `<div class="Lright1">
 						<div class="Lright1_img">
-							<a href="#"><img src="img/${product.src}" alt="" /></a>
+							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>
 						</div>
 						<div class="Lright1_name">
-							<a href="#">${product.name}</a>
+							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.name}</a>
 						</div>
 						<div class="Lright1_price">
-							<a href="#">${product.price}</a>
+							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.price}</a>
 						</div>
 					</div>`
 					}
 					for( var j = 0 ; j < json[attr].list2.length ; j++ ){
 						var product = json[attr].list2[j];//一个商品对象
-						conStr2 += `<a href="#"><img src="img/${product.src}" alt="" /></a>`
+						conStr2 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list2" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>`
 					}
 					for( var j = 0 ; j < json[attr].list4.length ; j++ ){
 						var product = json[attr].list4[j];//一个商品对象
-						conStr4 += `<li><a href="#"><img src="img/${product.src}" alt="" /></a></li>`
+						conStr4 += `<li><a href="details.html?pid=${product.id}&cname=${attr}&position=list4" data-id="${product.id}"> <img src="img/${product.src}" alt="" /></a></li>`
 					}
 					for( var j = 0 ; j < json[attr].list1.length ; j++ ){
 						var product = json[attr].list1[j];//一个商品对象
-						conStr3 += `<a href="#">
+						conStr3 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list1" data-id="${product.id}">
 							<img src="img/${product.src}" alt="" />
 						</a>`
 					}
@@ -135,27 +135,27 @@ requirejs(["jquery","index","pub"],function($,index,pub){
 						var product = json[attr].list3[j];//一个商品对象
 						conStr1 += `<div class="Lright1">
 						<div class="Lright1_img">
-							<a href="#"><img src="img/${product.src}" alt="" /></a>
+							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>
 						</div>
 						<div class="Lright1_name">
-							<a href="#">${product.name}</a>
+							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.name}</a>
 						</div>
 						<div class="Lright1_price">
-							<a href="#">${product.price}</a>
+							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.price}</a>
 						</div>
 					</div>`
 					}
 					for( var j = 0 ; j < json[attr].list2.length ; j++ ){
 						var product = json[attr].list2[j];//一个商品对象
-						conStr2 += `<a href="#"><img src="img/${product.src}" alt="" /></a>`
+						conStr2 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list2" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>`
 					}
 					for( var j = 0 ; j < json[attr].list4.length ; j++ ){
 						var product = json[attr].list4[j];//一个商品对象
-						conStr4 += `<li><a href="#"><img src="img/${product.src}" alt="" /></a></li>`
+						conStr4 += `<li><a href="details.html?pid=${product.id}&cname=${attr}&position=list4" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a></li>`
 					}
 					for( var j = 0 ; j < json[attr].list1.length ; j++ ){
 						var product = json[attr].list1[j];//一个商品对象
-						conStr3 += `<a href="#">
+						conStr3 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list1" data-id="${product.id}">
 							<img src="img/${product.src}" alt="" />
 						</a>`
 					}
@@ -173,27 +173,27 @@ requirejs(["jquery","index","pub"],function($,index,pub){
 						var product = json[attr].list3[j];//一个商品对象
 						conStr1 += `<div class="Lright1">
 						<div class="Lright1_img">
-							<a href="#"><img src="img/${product.src}" alt="" /></a>
+							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>
 						</div>
 						<div class="Lright1_name">
-							<a href="#">${product.name}</a>
+							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.name}</a>
 						</div>
 						<div class="Lright1_price">
-							<a href="#">${product.price}</a>
+							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.price}</a>
 						</div>
 					</div>`
 					}
 					for( var j = 0 ; j < json[attr].list2.length ; j++ ){
 						var product = json[attr].list2[j];//一个商品对象
-						conStr2 += `<a href="#"><img src="img/${product.src}" alt="" /></a>`
+						conStr2 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list2" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>`
 					}
 					for( var j = 0 ; j < json[attr].list4.length ; j++ ){
 						var product = json[attr].list4[j];//一个商品对象
-						conStr4 += `<li><a href="#"><img src="img/${product.src}" alt="" /></a></li>`
+						conStr4 += `<li><a href="details.html?pid=${product.id}&cname=${attr}&position=list4" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a></li>`
 					}
 					for( var j = 0 ; j < json[attr].list1.length ; j++ ){
 						var product = json[attr].list1[j];//一个商品对象
-						conStr3 += `<a href="#">
+						conStr3 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list1" data-id="${product.id}">
 							<img src="img/${product.src}" alt="" />
 						</a>`
 					}
@@ -210,28 +210,28 @@ requirejs(["jquery","index","pub"],function($,index,pub){
 					for( var j = 0 ; j < json[attr].list3.length ; j++ ){
 						var product = json[attr].list3[j];//一个商品对象
 						conStr1 += `<div class="Lright1">
-						<div class="Lright1_img">
-							<a href="#"><img src="img/${product.src}" alt="" /></a>
+						<div class="Lright1_img" data-id="${product.id}">
+							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>
 						</div>
 						<div class="Lright1_name">
-							<a href="#">${product.name}</a>
+							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.name}</a>
 						</div>
 						<div class="Lright1_price">
-							<a href="#">${product.price}</a>
+							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.price}</a>
 						</div>
 					</div>`
 					}
 					for( var j = 0 ; j < json[attr].list2.length ; j++ ){
 						var product = json[attr].list2[j];//一个商品对象
-						conStr2 += `<a href="#"><img src="img/${product.src}" alt="" /></a>`
+						conStr2 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list2" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>`
 					}
 					for( var j = 0 ; j < json[attr].list4.length ; j++ ){
 						var product = json[attr].list4[j];//一个商品对象
-						conStr4 += `<li><a href="#"><img src="img/${product.src}" alt="" /></a></li>`
+						conStr4 += `<li><a href="details.html?pid=${product.id}&cname=${attr}&position=list4" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a></li>`
 					}
 					for( var j = 0 ; j < json[attr].list1.length ; j++ ){
 						var product = json[attr].list1[j];//一个商品对象
-						conStr3 += `<a href="#">
+						conStr3 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list1" data-id="${product.id}">
 							<img src="img/${product.src}" alt="" />
 						</a>`
 					}
@@ -249,27 +249,27 @@ requirejs(["jquery","index","pub"],function($,index,pub){
 						var product = json[attr].list3[j];//一个商品对象
 						conStr1 += `<div class="Lright1">
 						<div class="Lright1_img">
-							<a href="#"><img src="img/${product.src}" alt="" /></a>
+							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>
 						</div>
 						<div class="Lright1_name">
-							<a href="#">${product.name}</a>
+							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.name}</a>
 						</div>
 						<div class="Lright1_price">
-							<a href="#">${product.price}</a>
+							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.price}</a>
 						</div>
 					</div>`
 					}
 					for( var j = 0 ; j < json[attr].list2.length ; j++ ){
 						var product = json[attr].list2[j];//一个商品对象
-						conStr2 += `<a href="#"><img src="img/${product.src}" alt="" /></a>`
+						conStr2 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list2" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>`
 					}
 					for( var j = 0 ; j < json[attr].list4.length ; j++ ){
 						var product = json[attr].list4[j];//一个商品对象
-						conStr4 += `<li><a href="#"><img src="img/${product.src}" alt="" /></a></li>`
+						conStr4 += `<li><a href="details.html?pid=${product.id}&cname=${attr}&position=list4" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a></li>`
 					}
 					for( var j = 0 ; j < json[attr].list1.length ; j++ ){
 						var product = json[attr].list1[j];//一个商品对象
-						conStr3 += `<a href="#">
+						conStr3 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list1" data-id="${product.id}">
 							<img src="img/${product.src}" alt="" />
 						</a>`
 					}
@@ -287,27 +287,27 @@ requirejs(["jquery","index","pub"],function($,index,pub){
 						var product = json[attr].list3[j];//一个商品对象
 						conStr1 += `<div class="Lright1">
 						<div class="Lright1_img">
-							<a href="#"><img src="img/${product.src}" alt="" /></a>
+							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>
 						</div>
 						<div class="Lright1_name">
-							<a href="#">${product.name}</a>
+							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.name}</a>
 						</div>
 						<div class="Lright1_price">
-							<a href="#">${product.price}</a>
+							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.price}</a>
 						</div>
 					</div>`
 					}
 					for( var j = 0 ; j < json[attr].list2.length ; j++ ){
 						var product = json[attr].list2[j];//一个商品对象
-						conStr2 += `<a href="#"><img src="img/${product.src}" alt="" /></a>`
+						conStr2 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list2" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>`
 					}
 					for( var j = 0 ; j < json[attr].list4.length ; j++ ){
 						var product = json[attr].list4[j];//一个商品对象
-						conStr4 += `<li><a href="#"><img src="img/${product.src}" alt="" /></a></li>`
+						conStr4 += `<li><a href="details.html?pid=${product.id}&cname=${attr}&position=list4" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a></li>`
 					}
 					for( var j = 0 ; j < json[attr].list1.length ; j++ ){
 						var product = json[attr].list1[j];//一个商品对象
-						conStr3 += `<a href="#">
+						conStr3 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list1" data-id="${product.id}">
 							<img src="img/${product.src}" alt="" />
 						</a>`
 					}
@@ -325,27 +325,27 @@ requirejs(["jquery","index","pub"],function($,index,pub){
 						var product = json[attr].list3[j];//一个商品对象
 						conStr1 += `<div class="Lright1">
 						<div class="Lright1_img">
-							<a href="#"><img src="img/${product.src}" alt="" /></a>
+							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>
 						</div>
 						<div class="Lright1_name">
-							<a href="#">${product.name}</a>
+							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.name}</a>
 						</div>
 						<div class="Lright1_price">
-							<a href="#">${product.price}</a>
+							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.price}</a>
 						</div>
 					</div>`
 					}
 					for( var j = 0 ; j < json[attr].list2.length ; j++ ){
 						var product = json[attr].list2[j];//一个商品对象
-						conStr2 += `<a href="#"><img src="img/${product.src}" alt="" /></a>`
+						conStr2 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list2" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>`
 					}
 					for( var j = 0 ; j < json[attr].list4.length ; j++ ){
 						var product = json[attr].list4[j];//一个商品对象
-						conStr4 += `<li><a href="#"><img src="img/${product.src}" alt="" /></a></li>`
+						conStr4 += `<li><a href="details.html?pid=${product.id}&cname=${attr}&position=list4" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a></li>`
 					}
 					for( var j = 0 ; j < json[attr].list1.length ; j++ ){
 						var product = json[attr].list1[j];//一个商品对象
-						conStr3 += `<a href="#">
+						conStr3 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list1" data-id="${product.id}">
 							<img src="img/${product.src}" alt="" />
 						</a>`
 					}

@@ -1,0 +1,93 @@
+{
+	"classify001":{
+		"name" : "手机数码",
+		"list" : [
+			{
+				"id" : "1",
+				"name" : "魅族 ( MEIZU ) 魅蓝note5",
+				"src" : "r11.jpg",
+				"price" : "￥1399"
+			},
+			{
+				"id" : "2",
+				"name" : "华为（Huawei）畅享7 Plus 64GB 移动联通电信4G手机 全网通 双卡双待（流光金）",
+				"src" : "r12.jpg",
+				"price" : "￥1699"
+			},
+			{
+				"id" : "3",
+				"name" : " 佳能（Canon）IXUS 285 HS 银色 数码相机 ",
+				"src" : "r1.jpg",
+				"price" : "￥1099"
+			},
+			{
+				"id" : "4",
+				"name" : " 飞毛腿  M105 PLUS  15000毫安 聚合物 双USB输出 移动电源/充电宝 银色 ",
+				"src" : "r14.jpg",
+				"price" : "￥89"
+			},
+			{
+				"id" : "5",
+				"name" : " Viken   维肯 VE-501  有线耳机 黑色 ",
+				"src" : "r15.jpg",
+				"price" : "￥29"
+			},
+			{
+				"id" : "6",
+				"name" : " BIRD/波导 A510 移动联通2G 直板老人手机 咖啡色 ",
+				"src" : "r16.jpg",
+				"price" : "￥99"
+			}
+		],
+		"list2" : [
+			{
+				"id" : "7",
+				"src" : "c11.jpg"
+			},
+			{
+				"id" : "shop02",
+				"src" : "c12.jpg"
+			}
+		],
+		"list4" : [
+			{
+				"id" : "8",
+				"src" : "8F_logos_01.jpg"
+			},
+			{
+				"id" : "9",
+				"src" : "8F_logos_02.jpg"
+			},
+			{
+				"id" : "10",
+				"src" : "8F_logos_03.jpg"
+			},
+			{
+				"id" : "11",
+				"src" : "8F_logos_04.jpg"
+			},
+			{
+				"id" : "12",
+				"src" : "8F_logos_05.jpg"
+			},
+			{
+				"id" : "13",
+				"src" : "8F_logos_06.jpg"
+			},
+			{
+				"id" : "14",
+				"src" : "8F_logos_07.jpg"
+			},
+			{
+				"id" : "15",
+				"src" : "8F_logos_08.jpg"
+			}
+		],
+		"list1" : [
+			{
+				"id" : "16",
+				"src" : "8F_m200_cover.jpg"
+			}
+		]
+	}
+}

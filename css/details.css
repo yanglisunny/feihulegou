@@ -262,22 +262,23 @@ input:focus {
         position: absolute;
         top: 0;
         left: 300px;
-        width: 400px;
-        height: 400px;
+        width: 300px;
+        height: 300px;
         border: 1px solid #f97700;
         overflow: hidden;
         display: none;
         z-index: 10; }
       #zhzq .zhzq_con .zhzq_con_fdj .zhzq_con_fdjL #middle {
         width: 300px;
-        min-height: 300px;
+        height: 300px;
         position: absolute;
         border: 1px solid #ccc; }
         #zhzq .zhzq_con .zhzq_con_fdj .zhzq_con_fdjL #middle img {
-          width: 100%; }
+          width: 300px;
+          height: 300px; }
       #zhzq .zhzq_con .zhzq_con_fdj .zhzq_con_fdjL #mask {
-        width: 140px;
-        height: 140px;
+        width: 113px;
+        height: 113px;
         background: orange;
         opacity: 0.3;
         position: absolute;
@@ -296,7 +297,6 @@ input:focus {
         position: absolute;
         left: 0;
         top: 300px;
-        overflow: hidden;
         padding-left: 10px; }
         #zhzq .zhzq_con .zhzq_con_fdj .zhzq_con_fdjL #sImg .Lbtn {
           width: 10px;
@@ -315,7 +315,9 @@ input:focus {
         #zhzq .zhzq_con .zhzq_con_fdj .zhzq_con_fdjL #sImg img {
           border: 1px solid #eaeaea;
           float: left;
-          margin-right: 10px; }
+          margin-right: 10px;
+          width: 60px;
+          height: 60px; }
       #zhzq .zhzq_con .zhzq_con_fdj .zhzq_con_fdjL .shareimgs .moreimg a {
         color: #3366cc;
         font-size: 12px; }
