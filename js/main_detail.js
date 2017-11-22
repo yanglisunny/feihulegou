@@ -5,8 +5,51 @@ requirejs.config({
 	}
 })
 requirejs(["jquery","pub"],function($,pub){
-	
+	//退出
+	$(".top1_left2").on("click",".out",function(){
+		$(".top1_left").css("display","block");
+		$(".top1_left2").css("display","none");
+		var brr = pub.getCookie2();
+		for(var key in brr){
+			console.log(brr[key][0])
+			var rname = JSON.parse(brr[key][1]).uname;
+			var rpwd = JSON.parse(brr[key][1]).upwd;
+			var rphone = JSON.parse(brr[key][1]).uphone;
+			var rlogined = JSON.parse(brr[key][1]).logined;
+		var json = {
+					"uname":rname,
+					"upwd":rpwd,
+					"uphone":rphone,
+					"logined":0,
+					}
+		pub.setCookie(brr[key][0],JSON.stringify(json));
+		}
+		
+	})
 	window.onload=function(){
+		if(document.cookie){
+			var sum = 0;
+		var oldCookie = pub.getCookie3("prolist");
+			//如果cookie中没有数据 直接push 
+		var arr=oldCookie;
+		//再次点击商品时  判断这个商品在原cookie中是否存在  如果存在就将数量++
+		for( var i = 0 ; i < arr.length ; i++ ){
+				sum += arr[i].count;
+		}
+		$(".nav_con .shopcart #Cart_num").html(sum);
+			var brr = pub.getCookie2();
+			for(var key in brr){
+				var rname = JSON.parse(brr[key][1]).uname;
+				var rlogined = JSON.parse(brr[key][1]).logined;
+				if(rlogined== 1){
+					$(".top1_left").css("display","none");
+					$(".top1_left2").css("display","block");
+					$(".uname").html(rname);
+					$(".top1_left2").css({"color":"#333","font-size":"14px","font-family":"Microsoft Yahei"});
+					break;
+				}
+			}
+		}
 		//判断数据是什么根据地址栏的数据来判断
 		var urlstr = location.href;
 	 			//如果路径没有参数   ？   就说明没有传递数据
@@ -35,7 +78,6 @@ requirejs(["jquery","pub"],function($,pub){
 							$(".zhzq_con_top>.topic").html(json[pname].name);
 							$(".fdjR_name>.topic").html(pro.name);
 							$(".fdjR_price .price").html(pro.price)
-							console.log(pro.price)
 							break;
 	 					}
 	 				}
@@ -57,6 +99,7 @@ requirejs(["jquery","pub"],function($,pub){
 	 					var pro = json[pname].small[i];//每一个商品
 	 					if( pro.id == pid ){
 	 						smallImgSrc=pro.src;
+	 						
 	 						for(var j=0;j<json[pname].small[i].src.length;j++){
 	 							var pro_src= json[pname].small[i].src;
 		 						html1 += `<img src="img/${pro_src[j]}"  class="imgss"/>`
@@ -64,7 +107,9 @@ requirejs(["jquery","pub"],function($,pub){
 							break;
 	 					}
 	 				}
+	 				
 	 				$(".simgs").html( html1 );
+	 				
 	 				var bigImgSrc = [];
 	 				var middleImgSrc =[];
 	 				
@@ -74,9 +119,11 @@ requirejs(["jquery","pub"],function($,pub){
 	 					var pro = json[pname].big[i];//每一个商品
 	 					if( pro.id == pid ){
 	 						bigImgSrc = pro.src;
+	 						html2 = `<img src="img/${smallImgSrc[0]}" alt="" id="bigImg"/>`;
 	 						break;
 	 					}
 	 				}
+					$("#big").html(html2);
 					for( var i = 0 ; i < json[pname].middle.length ; i++ ){
 	 					var pro = json[pname].middle[i];//每一个商品
 	 					if( pro.id == pid ){
@@ -86,7 +133,7 @@ requirejs(["jquery","pub"],function($,pub){
 	 				}
 					
 						
-					//小图换页
+				//小图换页
 				var ht = "";
 				var count=0;
 				$("#sImg>.Rbtn").click(function(){
@@ -125,7 +172,45 @@ requirejs(["jquery","pub"],function($,pub){
 	 			}
 	 			
 	 		})
-	 	}
+	 		
+				var num = 0;
+	 		//加入购物车
+			$(".fdjR_gwc .joinshop").click(function(){
+				var addNum= Number($(".calculate .and").val());
+				var oldNum =Number($(".nav_con .shopcart #Cart_num").html()) ;
+				//改变购物车里面的值
+				$(".nav_con .shopcart #Cart_num").html(addNum+oldNum);
+				//修改cookie
+				var arr = [];
+				var flag = true;//如果值为真 就像arr中push商品
+				var datajson = {
+					id : pid,
+					attr :pname,
+					list : posit,
+					count : addNum
+				}
+				//再次点击时   商品会被覆盖    可以先将cookie中的数据取出来  存入到arr中
+				var oldCookie = pub.getCookie3("prolist");
+				//如果cookie中没有数据 直接push 
+				if( oldCookie.length != 0 ){
+					arr=oldCookie;
+					//再次点击商品时  判断这个商品在原cookie中是否存在  如果存在就将数量++
+					for( var i = 0 ; i < arr.length ; i++ ){
+						
+						if( datajson.id == arr[i].id && datajson.attr == arr[i].attr){
+							arr[i].count++;
+							flag = false;
+							break;
+						}
+					}
+				}
+				if( flag ){//如果值为真 就像arr中push商品
+					arr.push( datajson );
+				}
+				//将数组信息存入到cookie
+				pub.setCookie( "prolist", JSON.stringify(arr) );
+			})
+	 }
 	
 	var flag= true;
 	//打开城市选择
@@ -221,7 +306,6 @@ requirejs(["jquery","pub"],function($,pub){
 		$("#big").css("display","none");
 		$("#mask").css("display","none");
 	}) 
-	
 	
 	
 })

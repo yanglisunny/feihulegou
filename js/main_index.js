@@ -31,339 +31,371 @@ requirejs(["jquery","index","pub"],function($,index,pub){
 	})
 	index.louti();
 	index.daojishi();
+	//退出
+		$(".top1_left2").on("click",".out",function(){
+			console.log(1)
+			$(".top1_left").css("display","block");
+			$(".top1_left2").css("display","none");
+			var brr = pub.getCookie2();
+			for(var key in brr){
+				console.log(brr[key][0])
+				var rname = JSON.parse(brr[key][1]).uname;
+				var rpwd = JSON.parse(brr[key][1]).upwd;
+				var rphone = JSON.parse(brr[key][1]).uphone;
+				var rlogined = JSON.parse(brr[key][1]).logined;
+			var json = {
+						"uname":rname,
+						"upwd":rpwd,
+						"uphone":rphone,
+						"logined":0,
+						}
+			pub.setCookie(brr[key][0],JSON.stringify(json));
+			}
+			
+		})
+	
 	window.onload=function(){
 		if(document.cookie){
-			var s = JSON.parse(pub.getCookie(3)).uname;
-			$(".top1_left").css("display","none");
-			$(".top1_left2").html(s+" 您好,欢迎登录飞虎乐购");
-			$(".top1_left2").css({"color":"#333","font-size":"14px","font-family":"Microsoft Yahei"});
+			var brr = pub.getCookie2();
+			for(var key in brr){
+				var rname = JSON.parse(brr[key][1]).uname;
+				var rlogined = JSON.parse(brr[key][1]).logined;
+				if(rlogined== 1){
+					console.log(1)
+					$(".top1_left").css("display","none");
+					$(".top1_left2").css("display","inline-block");
+					$(".uname").html(rname);
+					$(".top1_left2").css({"color":"#333","font-size":"14px","font-family":"Microsoft Yahei"});
+					break;
+				}
+			}
 		}
+		
 		//ajax请求数据
 		
-	$.ajax({
-		type:"get",
-		url:"http://127.0.0.1/git/feihulegou/data/index.json",
-		async:true,
-		success : function(json){
-			var conStr1 = "";
-			var conStr2 = "";
-			var conStr3 = "";
-			var conStr4 = "";
-			for(var attr in json){
-				if(json[attr].name=="手机数码"){
-					conStr1="";
-					conStr2="";
-					conStr3="";
-					conStr4 = "";
-					for( var j = 0 ; j < json[attr].list3.length ; j++ ){
-						var product = json[attr].list3[j];//一个商品对象
-						conStr1 += `<div class="Lright1">
-						<div class="Lright1_img">
-							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>
-						</div>
-						<div class="Lright1_name">
-							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.name}</a>
-						</div>
-						<div class="Lright1_price">
-							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.price}</a>
-						</div>
-					</div>`
+		$.ajax({
+			type:"get",
+			url:"http://127.0.0.1/git/feihulegou/data/index.json",
+			async:true,
+			success : function(json){
+				var conStr1 = "";
+				var conStr2 = "";
+				var conStr3 = "";
+				var conStr4 = "";
+				for(var attr in json){
+					if(json[attr].name=="手机数码"){
+						conStr1="";
+						conStr2="";
+						conStr3="";
+						conStr4 = "";
+						for( var j = 0 ; j < json[attr].list3.length ; j++ ){
+							var product = json[attr].list3[j];//一个商品对象
+							conStr1 += `<div class="Lright1">
+							<div class="Lright1_img">
+								<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>
+							</div>
+							<div class="Lright1_name">
+								<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.name}</a>
+							</div>
+							<div class="Lright1_price">
+								<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.price}</a>
+							</div>
+						</div>`
+						}
+						for( var j = 0 ; j < json[attr].list2.length ; j++ ){
+							var product = json[attr].list2[j];//一个商品对象
+							conStr2 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list2" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>`
+						}
+						for( var j = 0 ; j < json[attr].list4.length ; j++ ){
+							var product = json[attr].list4[j];//一个商品对象
+							conStr4 += `<li><a href="list.html?pid=${product.id}&cname=${attr}&position=list4" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a></li>`
+						}
+						for( var j = 0 ; j < json[attr].list1.length ; j++ ){
+							var product = json[attr].list1[j];//一个商品对象
+							conStr3 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list1" data-id="${product.id}">
+								<img src="img/${product.src}" alt="" />
+							</a>`
+						}
+						$(".Louti1 .Lleft").html(conStr3);
+						$(".Louti1 .Louti_bottom ul").html(conStr4);
+						$(".Louti1 .Lright").html(conStr1);
+						$(".Louti1 .Lcenter").html(conStr2);
 					}
-					for( var j = 0 ; j < json[attr].list2.length ; j++ ){
-						var product = json[attr].list2[j];//一个商品对象
-						conStr2 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list2" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>`
+					if(json[attr].name=="鞋服配饰"){
+						conStr1="";
+						conStr2="";
+						conStr3="";
+						conStr4 = "";
+						for( var j = 0 ; j < json[attr].list3.length ; j++ ){
+							var product = json[attr].list3[j];//一个商品对象
+							conStr1 += `<div class="Lright1">
+							<div class="Lright1_img">
+								<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>
+							</div>
+							<div class="Lright1_name">
+								<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.name}</a>
+							</div>
+							<div class="Lright1_price">
+								<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.price}</a>
+							</div>
+						</div>`
+						}
+						for( var j = 0 ; j < json[attr].list2.length ; j++ ){
+							var product = json[attr].list2[j];//一个商品对象
+							conStr2 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list2" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>`
+						}
+						for( var j = 0 ; j < json[attr].list4.length ; j++ ){
+							var product = json[attr].list4[j];//一个商品对象
+							conStr4 += `<li><a href="list.html?pid=${product.id}&cname=${attr}&position=list4" data-id="${product.id}"> <img src="img/${product.src}" alt="" /></a></li>`
+						}
+						for( var j = 0 ; j < json[attr].list1.length ; j++ ){
+							var product = json[attr].list1[j];//一个商品对象
+							conStr3 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list1" data-id="${product.id}">
+								<img src="img/${product.src}" alt="" />
+							</a>`
+						}
+						$(".Louti2 .Lleft").html(conStr3);
+						$(".Louti2 .Louti_bottom ul").html(conStr4);
+						$(".Louti2 .Lcenter").html(conStr2);
+						$(".Louti2 .Lright").html(conStr1);
 					}
-					for( var j = 0 ; j < json[attr].list4.length ; j++ ){
-						var product = json[attr].list4[j];//一个商品对象
-						conStr4 += `<li><a href="details.html?pid=${product.id}&cname=${attr}&position=list4" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a></li>`
+					if(json[attr].name=="家用电器"){
+						conStr1="";
+						conStr2="";
+						conStr3="";
+						conStr4 = "";
+						for( var j = 0 ; j < json[attr].list3.length ; j++ ){
+							var product = json[attr].list3[j];//一个商品对象
+							conStr1 += `<div class="Lright1">
+							<div class="Lright1_img">
+								<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>
+							</div>
+							<div class="Lright1_name">
+								<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.name}</a>
+							</div>
+							<div class="Lright1_price">
+								<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.price}</a>
+							</div>
+						</div>`
+						}
+						for( var j = 0 ; j < json[attr].list2.length ; j++ ){
+							var product = json[attr].list2[j];//一个商品对象
+							conStr2 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list2" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>`
+						}
+						for( var j = 0 ; j < json[attr].list4.length ; j++ ){
+							var product = json[attr].list4[j];//一个商品对象
+							conStr4 += `<li><a href="list.html?pid=${product.id}&cname=${attr}&position=list4" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a></li>`
+						}
+						for( var j = 0 ; j < json[attr].list1.length ; j++ ){
+							var product = json[attr].list1[j];//一个商品对象
+							conStr3 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list1" data-id="${product.id}">
+								<img src="img/${product.src}" alt="" />
+							</a>`
+						}
+						$(".Louti3 .Lleft").html(conStr3);
+						$(".Louti3 .Louti_bottom ul").html(conStr4);
+						$(".Louti3 .Lcenter").html(conStr2);
+						$(".Louti3 .Lright").html(conStr1);
 					}
-					for( var j = 0 ; j < json[attr].list1.length ; j++ ){
-						var product = json[attr].list1[j];//一个商品对象
-						conStr3 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list1" data-id="${product.id}">
-							<img src="img/${product.src}" alt="" />
-						</a>`
+					if(json[attr].name=="家居生活"){
+						conStr1="";
+						conStr2="";
+						conStr3="";
+						conStr4 = "";
+						for( var j = 0 ; j < json[attr].list3.length ; j++ ){
+							var product = json[attr].list3[j];//一个商品对象
+							conStr1 += `<div class="Lright1">
+							<div class="Lright1_img">
+								<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>
+							</div>
+							<div class="Lright1_name">
+								<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.name}</a>
+							</div>
+							<div class="Lright1_price">
+								<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.price}</a>
+							</div>
+						</div>`
+						}
+						for( var j = 0 ; j < json[attr].list2.length ; j++ ){
+							var product = json[attr].list2[j];//一个商品对象
+							conStr2 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list2" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>`
+						}
+						for( var j = 0 ; j < json[attr].list4.length ; j++ ){
+							var product = json[attr].list4[j];//一个商品对象
+							conStr4 += `<li><a href="list.html?pid=${product.id}&cname=${attr}&position=list4" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a></li>`
+						}
+						for( var j = 0 ; j < json[attr].list1.length ; j++ ){
+							var product = json[attr].list1[j];//一个商品对象
+							conStr3 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list1" data-id="${product.id}">
+								<img src="img/${product.src}" alt="" />
+							</a>`
+						}
+						$(".Louti4 .Lleft").html(conStr3);
+						$(".Louti4 .Louti_bottom ul").html(conStr4);
+						$(".Louti4 .Lcenter").html(conStr2);
+						$(".Louti4 .Lright").html(conStr1);
 					}
-					$(".Louti1 .Lleft").html(conStr3);
-					$(".Louti1 .Louti_bottom ul").html(conStr4);
-					$(".Louti1 .Lright").html(conStr1);
-					$(".Louti1 .Lcenter").html(conStr2);
+					if(json[attr].name=="母婴玩具"){
+						conStr1="";
+						conStr2="";
+						conStr3="";
+						conStr4 = "";
+						for( var j = 0 ; j < json[attr].list3.length ; j++ ){
+							var product = json[attr].list3[j];//一个商品对象
+							conStr1 += `<div class="Lright1">
+							<div class="Lright1_img" data-id="${product.id}">
+								<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>
+							</div>
+							<div class="Lright1_name">
+								<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.name}</a>
+							</div>
+							<div class="Lright1_price">
+								<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.price}</a>
+							</div>
+						</div>`
+						}
+						for( var j = 0 ; j < json[attr].list2.length ; j++ ){
+							var product = json[attr].list2[j];//一个商品对象
+							conStr2 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list2" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>`
+						}
+						for( var j = 0 ; j < json[attr].list4.length ; j++ ){
+							var product = json[attr].list4[j];//一个商品对象
+							conStr4 += `<li><a href="list.html?pid=${product.id}&cname=${attr}&position=list4" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a></li>`
+						}
+						for( var j = 0 ; j < json[attr].list1.length ; j++ ){
+							var product = json[attr].list1[j];//一个商品对象
+							conStr3 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list1" data-id="${product.id}">
+								<img src="img/${product.src}" alt="" />
+							</a>`
+						}
+						$(".Louti5 .Lleft").html(conStr3);
+						$(".Louti5 .Louti_bottom ul").html(conStr4);
+						$(".Louti5 .Lcenter").html(conStr2);
+						$(".Louti5 .Lright").html(conStr1);
+					}
+					if(json[attr].name=="运动户外"){
+						conStr1="";
+						conStr2="";
+						conStr3="";
+						conStr4 = "";
+						for( var j = 0 ; j < json[attr].list3.length ; j++ ){
+							var product = json[attr].list3[j];//一个商品对象
+							conStr1 += `<div class="Lright1">
+							<div class="Lright1_img">
+								<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>
+							</div>
+							<div class="Lright1_name">
+								<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.name}</a>
+							</div>
+							<div class="Lright1_price">
+								<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.price}</a>
+							</div>
+						</div>`
+						}
+						for( var j = 0 ; j < json[attr].list2.length ; j++ ){
+							var product = json[attr].list2[j];//一个商品对象
+							conStr2 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list2" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>`
+						}
+						for( var j = 0 ; j < json[attr].list4.length ; j++ ){
+							var product = json[attr].list4[j];//一个商品对象
+							conStr4 += `<li><a href="list.html?pid=${product.id}&cname=${attr}&position=list4" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a></li>`
+						}
+						for( var j = 0 ; j < json[attr].list1.length ; j++ ){
+							var product = json[attr].list1[j];//一个商品对象
+							conStr3 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list1" data-id="${product.id}">
+								<img src="img/${product.src}" alt="" />
+							</a>`
+						}
+						$(".Louti6 .Lleft").html(conStr3);
+						$(".Louti6 .Louti_bottom ul").html(conStr4);
+						$(".Louti6 .Lcenter").html(conStr2);
+						$(".Louti6 .Lright").html(conStr1);
+					}
+					if(json[attr].name=="个护美妆"){
+						conStr1="";
+						conStr2="";
+						conStr3="";
+						conStr4 = "";
+						for( var j = 0 ; j < json[attr].list3.length ; j++ ){
+							var product = json[attr].list3[j];//一个商品对象
+							conStr1 += `<div class="Lright1">
+							<div class="Lright1_img">
+								<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>
+							</div>
+							<div class="Lright1_name">
+								<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.name}</a>
+							</div>
+							<div class="Lright1_price">
+								<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.price}</a>
+							</div>
+						</div>`
+						}
+						for( var j = 0 ; j < json[attr].list2.length ; j++ ){
+							var product = json[attr].list2[j];//一个商品对象
+							conStr2 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list2" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>`
+						}
+						for( var j = 0 ; j < json[attr].list4.length ; j++ ){
+							var product = json[attr].list4[j];//一个商品对象
+							conStr4 += `<li><a href="list.html?pid=${product.id}&cname=${attr}&position=list4" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a></li>`
+						}
+						for( var j = 0 ; j < json[attr].list1.length ; j++ ){
+							var product = json[attr].list1[j];//一个商品对象
+							conStr3 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list1" data-id="${product.id}">
+								<img src="img/${product.src}" alt="" />
+							</a>`
+						}
+						$(".Louti7 .Lleft").html(conStr3);
+						$(".Louti7 .Louti_bottom ul").html(conStr4);
+						$(".Louti7 .Lcenter").html(conStr2);
+						$(".Louti7 .Lright").html(conStr1);
+					}
+					if(json[attr].name=="食品保健"){
+						conStr1="";
+						conStr2="";
+						conStr3="";
+						conStr4 = "";
+						for( var j = 0 ; j < json[attr].list3.length ; j++ ){
+							var product = json[attr].list3[j];//一个商品对象
+							conStr1 += `<div class="Lright1">
+							<div class="Lright1_img">
+								<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>
+							</div>
+							<div class="Lright1_name">
+								<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.name}</a>
+							</div>
+							<div class="Lright1_price">
+								<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.price}</a>
+							</div>
+						</div>`
+						}
+						for( var j = 0 ; j < json[attr].list2.length ; j++ ){
+							var product = json[attr].list2[j];//一个商品对象
+							conStr2 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list2" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>`
+						}
+						for( var j = 0 ; j < json[attr].list4.length ; j++ ){
+							var product = json[attr].list4[j];//一个商品对象
+							conStr4 += `<li><a href="list.html?pid=${product.id}&cname=${attr}&position=list4" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a></li>`
+						}
+						for( var j = 0 ; j < json[attr].list1.length ; j++ ){
+							var product = json[attr].list1[j];//一个商品对象
+							conStr3 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list1" data-id="${product.id}">
+								<img src="img/${product.src}" alt="" />
+							</a>`
+						}
+						$(".Louti8 .Lleft").html(conStr3);
+						$(".Louti8 .Louti_bottom ul").html(conStr4);
+						$(".Louti8 .Lcenter").html(conStr2);
+						$(".Louti8 .Lright").html(conStr1);
+					}
+					
 				}
-				if(json[attr].name=="鞋服配饰"){
-					conStr1="";
-					conStr2="";
-					conStr3="";
-					conStr4 = "";
-					for( var j = 0 ; j < json[attr].list3.length ; j++ ){
-						var product = json[attr].list3[j];//一个商品对象
-						conStr1 += `<div class="Lright1">
-						<div class="Lright1_img">
-							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>
-						</div>
-						<div class="Lright1_name">
-							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.name}</a>
-						</div>
-						<div class="Lright1_price">
-							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.price}</a>
-						</div>
-					</div>`
-					}
-					for( var j = 0 ; j < json[attr].list2.length ; j++ ){
-						var product = json[attr].list2[j];//一个商品对象
-						conStr2 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list2" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>`
-					}
-					for( var j = 0 ; j < json[attr].list4.length ; j++ ){
-						var product = json[attr].list4[j];//一个商品对象
-						conStr4 += `<li><a href="details.html?pid=${product.id}&cname=${attr}&position=list4" data-id="${product.id}"> <img src="img/${product.src}" alt="" /></a></li>`
-					}
-					for( var j = 0 ; j < json[attr].list1.length ; j++ ){
-						var product = json[attr].list1[j];//一个商品对象
-						conStr3 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list1" data-id="${product.id}">
-							<img src="img/${product.src}" alt="" />
-						</a>`
-					}
-					$(".Louti2 .Lleft").html(conStr3);
-					$(".Louti2 .Louti_bottom ul").html(conStr4);
-					$(".Louti2 .Lcenter").html(conStr2);
-					$(".Louti2 .Lright").html(conStr1);
-				}
-				if(json[attr].name=="家用电器"){
-					conStr1="";
-					conStr2="";
-					conStr3="";
-					conStr4 = "";
-					for( var j = 0 ; j < json[attr].list3.length ; j++ ){
-						var product = json[attr].list3[j];//一个商品对象
-						conStr1 += `<div class="Lright1">
-						<div class="Lright1_img">
-							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>
-						</div>
-						<div class="Lright1_name">
-							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.name}</a>
-						</div>
-						<div class="Lright1_price">
-							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.price}</a>
-						</div>
-					</div>`
-					}
-					for( var j = 0 ; j < json[attr].list2.length ; j++ ){
-						var product = json[attr].list2[j];//一个商品对象
-						conStr2 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list2" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>`
-					}
-					for( var j = 0 ; j < json[attr].list4.length ; j++ ){
-						var product = json[attr].list4[j];//一个商品对象
-						conStr4 += `<li><a href="details.html?pid=${product.id}&cname=${attr}&position=list4" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a></li>`
-					}
-					for( var j = 0 ; j < json[attr].list1.length ; j++ ){
-						var product = json[attr].list1[j];//一个商品对象
-						conStr3 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list1" data-id="${product.id}">
-							<img src="img/${product.src}" alt="" />
-						</a>`
-					}
-					$(".Louti3 .Lleft").html(conStr3);
-					$(".Louti3 .Louti_bottom ul").html(conStr4);
-					$(".Louti3 .Lcenter").html(conStr2);
-					$(".Louti3 .Lright").html(conStr1);
-				}
-				if(json[attr].name=="家居生活"){
-					conStr1="";
-					conStr2="";
-					conStr3="";
-					conStr4 = "";
-					for( var j = 0 ; j < json[attr].list3.length ; j++ ){
-						var product = json[attr].list3[j];//一个商品对象
-						conStr1 += `<div class="Lright1">
-						<div class="Lright1_img">
-							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>
-						</div>
-						<div class="Lright1_name">
-							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.name}</a>
-						</div>
-						<div class="Lright1_price">
-							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.price}</a>
-						</div>
-					</div>`
-					}
-					for( var j = 0 ; j < json[attr].list2.length ; j++ ){
-						var product = json[attr].list2[j];//一个商品对象
-						conStr2 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list2" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>`
-					}
-					for( var j = 0 ; j < json[attr].list4.length ; j++ ){
-						var product = json[attr].list4[j];//一个商品对象
-						conStr4 += `<li><a href="details.html?pid=${product.id}&cname=${attr}&position=list4" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a></li>`
-					}
-					for( var j = 0 ; j < json[attr].list1.length ; j++ ){
-						var product = json[attr].list1[j];//一个商品对象
-						conStr3 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list1" data-id="${product.id}">
-							<img src="img/${product.src}" alt="" />
-						</a>`
-					}
-					$(".Louti4 .Lleft").html(conStr3);
-					$(".Louti4 .Louti_bottom ul").html(conStr4);
-					$(".Louti4 .Lcenter").html(conStr2);
-					$(".Louti4 .Lright").html(conStr1);
-				}
-				if(json[attr].name=="母婴玩具"){
-					conStr1="";
-					conStr2="";
-					conStr3="";
-					conStr4 = "";
-					for( var j = 0 ; j < json[attr].list3.length ; j++ ){
-						var product = json[attr].list3[j];//一个商品对象
-						conStr1 += `<div class="Lright1">
-						<div class="Lright1_img" data-id="${product.id}">
-							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>
-						</div>
-						<div class="Lright1_name">
-							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.name}</a>
-						</div>
-						<div class="Lright1_price">
-							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.price}</a>
-						</div>
-					</div>`
-					}
-					for( var j = 0 ; j < json[attr].list2.length ; j++ ){
-						var product = json[attr].list2[j];//一个商品对象
-						conStr2 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list2" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>`
-					}
-					for( var j = 0 ; j < json[attr].list4.length ; j++ ){
-						var product = json[attr].list4[j];//一个商品对象
-						conStr4 += `<li><a href="details.html?pid=${product.id}&cname=${attr}&position=list4" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a></li>`
-					}
-					for( var j = 0 ; j < json[attr].list1.length ; j++ ){
-						var product = json[attr].list1[j];//一个商品对象
-						conStr3 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list1" data-id="${product.id}">
-							<img src="img/${product.src}" alt="" />
-						</a>`
-					}
-					$(".Louti5 .Lleft").html(conStr3);
-					$(".Louti5 .Louti_bottom ul").html(conStr4);
-					$(".Louti5 .Lcenter").html(conStr2);
-					$(".Louti5 .Lright").html(conStr1);
-				}
-				if(json[attr].name=="运动户外"){
-					conStr1="";
-					conStr2="";
-					conStr3="";
-					conStr4 = "";
-					for( var j = 0 ; j < json[attr].list3.length ; j++ ){
-						var product = json[attr].list3[j];//一个商品对象
-						conStr1 += `<div class="Lright1">
-						<div class="Lright1_img">
-							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>
-						</div>
-						<div class="Lright1_name">
-							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.name}</a>
-						</div>
-						<div class="Lright1_price">
-							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.price}</a>
-						</div>
-					</div>`
-					}
-					for( var j = 0 ; j < json[attr].list2.length ; j++ ){
-						var product = json[attr].list2[j];//一个商品对象
-						conStr2 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list2" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>`
-					}
-					for( var j = 0 ; j < json[attr].list4.length ; j++ ){
-						var product = json[attr].list4[j];//一个商品对象
-						conStr4 += `<li><a href="details.html?pid=${product.id}&cname=${attr}&position=list4" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a></li>`
-					}
-					for( var j = 0 ; j < json[attr].list1.length ; j++ ){
-						var product = json[attr].list1[j];//一个商品对象
-						conStr3 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list1" data-id="${product.id}">
-							<img src="img/${product.src}" alt="" />
-						</a>`
-					}
-					$(".Louti6 .Lleft").html(conStr3);
-					$(".Louti6 .Louti_bottom ul").html(conStr4);
-					$(".Louti6 .Lcenter").html(conStr2);
-					$(".Louti6 .Lright").html(conStr1);
-				}
-				if(json[attr].name=="个护美妆"){
-					conStr1="";
-					conStr2="";
-					conStr3="";
-					conStr4 = "";
-					for( var j = 0 ; j < json[attr].list3.length ; j++ ){
-						var product = json[attr].list3[j];//一个商品对象
-						conStr1 += `<div class="Lright1">
-						<div class="Lright1_img">
-							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>
-						</div>
-						<div class="Lright1_name">
-							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.name}</a>
-						</div>
-						<div class="Lright1_price">
-							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.price}</a>
-						</div>
-					</div>`
-					}
-					for( var j = 0 ; j < json[attr].list2.length ; j++ ){
-						var product = json[attr].list2[j];//一个商品对象
-						conStr2 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list2" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>`
-					}
-					for( var j = 0 ; j < json[attr].list4.length ; j++ ){
-						var product = json[attr].list4[j];//一个商品对象
-						conStr4 += `<li><a href="details.html?pid=${product.id}&cname=${attr}&position=list4" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a></li>`
-					}
-					for( var j = 0 ; j < json[attr].list1.length ; j++ ){
-						var product = json[attr].list1[j];//一个商品对象
-						conStr3 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list1" data-id="${product.id}">
-							<img src="img/${product.src}" alt="" />
-						</a>`
-					}
-					$(".Louti7 .Lleft").html(conStr3);
-					$(".Louti7 .Louti_bottom ul").html(conStr4);
-					$(".Louti7 .Lcenter").html(conStr2);
-					$(".Louti7 .Lright").html(conStr1);
-				}
-				if(json[attr].name=="食品保健"){
-					conStr1="";
-					conStr2="";
-					conStr3="";
-					conStr4 = "";
-					for( var j = 0 ; j < json[attr].list3.length ; j++ ){
-						var product = json[attr].list3[j];//一个商品对象
-						conStr1 += `<div class="Lright1">
-						<div class="Lright1_img">
-							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>
-						</div>
-						<div class="Lright1_name">
-							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.name}</a>
-						</div>
-						<div class="Lright1_price">
-							<a href="details.html?pid=${product.id}&cname=${attr}&position=list3" data-id="${product.id}">${product.price}</a>
-						</div>
-					</div>`
-					}
-					for( var j = 0 ; j < json[attr].list2.length ; j++ ){
-						var product = json[attr].list2[j];//一个商品对象
-						conStr2 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list2" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a>`
-					}
-					for( var j = 0 ; j < json[attr].list4.length ; j++ ){
-						var product = json[attr].list4[j];//一个商品对象
-						conStr4 += `<li><a href="details.html?pid=${product.id}&cname=${attr}&position=list4" data-id="${product.id}"><img src="img/${product.src}" alt="" /></a></li>`
-					}
-					for( var j = 0 ; j < json[attr].list1.length ; j++ ){
-						var product = json[attr].list1[j];//一个商品对象
-						conStr3 += `<a href="details.html?pid=${product.id}&cname=${attr}&position=list1" data-id="${product.id}">
-							<img src="img/${product.src}" alt="" />
-						</a>`
-					}
-					$(".Louti8 .Lleft").html(conStr3);
-					$(".Louti8 .Louti_bottom ul").html(conStr4);
-					$(".Louti8 .Lcenter").html(conStr2);
-					$(".Louti8 .Lright").html(conStr1);
-				}
+				
 				
 			}
 			
-			
-		}
-			
 //				$(".nav").html( title );
 //				$(".shoplist").html( conStr );
-			
-	})
-}
+		})
+	}
 })
 	

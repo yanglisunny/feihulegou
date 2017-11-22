@@ -54,6 +54,47 @@ requirejs(["jquery","pub"],function($,pub){
 		$(".crxxk_bottom>li").eq($(this).index()).css("display","block")
 							 					  .siblings().css("display","none")
 	})
+	window.onload=function(){
+		if(document.cookie){
+			var brr = pub.getCookie2();
+			for(var key in brr){
+				var rname = JSON.parse(brr[key][1]).uname;
+				var rlogined = JSON.parse(brr[key][1]).logined;
+				if(rlogined== 1){
+					console.log(1)
+					$(".top1_left").css("display","none");
+					$(".top1_left2").css("display","block");
+					$(".uname").html(rname);
+					$(".top1_left2").css({"color":"#333","font-size":"14px","font-family":"Microsoft Yahei"});
+					break;
+				}
+			}
+		}
+	}
+	
+	//退出
+		$(".top1_left2").on("click",".out",function(){
+			console.log(1)
+			$(".top1_left").css("display","block");
+			$(".top1_left2").css("display","none");
+			var brr = pub.getCookie2();
+			for(var key in brr){
+				console.log(brr[key][0])
+				var rname = JSON.parse(brr[key][1]).uname;
+				var rpwd = JSON.parse(brr[key][1]).upwd;
+				var rphone = JSON.parse(brr[key][1]).uphone;
+				var rlogined = JSON.parse(brr[key][1]).logined;
+			var json = {
+						"uname":rname,
+						"upwd":rpwd,
+						"uphone":rphone,
+						"logined":0,
+						}
+			pub.setCookie(brr[key][0],JSON.stringify(json));
+			}
+			
+		})
+	
 })
 
 

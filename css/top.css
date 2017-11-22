@@ -40,7 +40,7 @@ img {
 input:focus {
   outline: none; }
 
-.top1, .logo, .nav_con, .miaosha, .begin, #main, .bottom, .zhzq_con, .zhzq_con_bottom {
+.top1, .logo, .nav_con, .miaosha, .begin, #main, .bottom, .zhzq_con, .zhzq_con_bottom, .shoplist {
   width: 1200px;
   margin: 0 auto; }
 
@@ -50,15 +50,15 @@ input:focus {
   background: url(../img/top_bj.png) repeat-x 0 0; }
   .top .top1 {
     height: 29px; }
-    .top .top1 .top1_left {
+    .top .top1 .top1_left, .top .top1 .top1_left2 {
       float: left; }
-      .top .top1 .top1_left .login b {
+      .top .top1 .top1_left .login b, .top .top1 .top1_left2 .login b {
         font-size: 12px; }
-      .top .top1 .top1_left .login a {
+      .top .top1 .top1_left .login a, .top .top1 .top1_left2 .login a {
         font-size: 12px; }
-      .top .top1 .top1_left .register b {
+      .top .top1 .top1_left .register b, .top .top1 .top1_left2 .register b {
         font-size: 12px; }
-      .top .top1 .top1_left .register a {
+      .top .top1 .top1_left .register a, .top .top1 .top1_left2 .register a {
         font-size: 12px; }
     .top .top1 .top1_right {
       padding-top: 2px;
@@ -165,6 +165,8 @@ input:focus {
     cursor: pointer; }
     .navs span:hover {
       background: #8B7E66; }
+    .navs span a {
+      color: #000; }
   .navs .all {
     height: 40px;
     line-height: 40px;

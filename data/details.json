@@ -4,67 +4,129 @@
 		"small" : [
 			{
 				"id" : "1",
-				"src" : ["r15_10.jpg","r15_11.jpg","r15_12.jpg","r15_13.jpg","r15_14.jpg"]
+				"src" : ["r11.jpg","r11.jpg","r11.jpg","r11.jpg","r11.jpg"]
 			}, 
 			{
 				"id" : "2",
-				"src" : ["r15_10.jpg","r15_11.jpg","r15_12.jpg","r15_13.jpg","r15_14.jpg"]
+				"src" : ["r12.jpg","r12.jpg","r12.jpg","r12.jpg","r12.jpg"]
 			},
 			{
 				"id" : "3",
-				"src" : ["r15_10.jpg","r15_11.jpg","r15_12.jpg","r15_13.jpg","r15_14.jpg"]
+				"src" : ["r13.jpg","r13.jpg","r13.jpg","r13.jpg","r13.jpg"]
 			},
 			{
 				"id" : "4",
-				"src" : ["r15_10.jpg","r15_11.jpg","r15_12.jpg","r15_13.jpg","r15_14.jpg"]
+				"src" : ["r14.jpg","r14.jpg","r14.jpg","r14.jpg","r14.jpg"]
 			},
 			{
 				"id" : "5",
-				"src" : ["r15_10.jpg","r15_11.jpg","r15_12.jpg","r15_13.jpg","r15_14.jpg"]
+				"src" : ["r15.jpg","r15.jpg","r15.jpg","r15.jpg","r15.jpg"]
+			},
+			{
+				"id" : "6",
+				"src" : ["r16.jpg","r16.jpg","r16.jpg","r16.jpg","r16.jpg"]
+			},
+			{
+				"id" : "7",
+				"src" : ["c11.jpg","c11.jpg","c11.jpg","c11.jpg","c11.jpg"]
+			},
+			{
+				"id" : "8",
+				"src" : ["8F_logos_01.jpg","8F_logos_01.jpg","8F_logos_01.jpg","8F_logos_01.jpg","8F_logos_01.jpg"]
+			},
+			{
+				"id" : "9",
+				"src" : ["8F_logos_02.jpg","8F_logos_02.jpg","8F_logos_02.jpg","8F_logos_02.jpg","8F_logos_02.jpg"]
+			},
+			{
+				"id" : "136",
+				"src" : ["c12.jpg","c12.jpg","c12.jpg","c12.jpg","c12.jpg"]
 			}
+			
 		],
 		"middle":[
 			{
 				"id" : "1",
-				"src" : ["r15_20.jpg","r15_21.jpg","r15_22.jpg","r15_23.jpg","r15_24.jpg"]
+				"src" : ["r11.jpg","r11.jpg","r11.jpg","r11.jpg","r11.jpg"]
 			},
 			{
 				"id" : "2",
-				"src" : ["r15_20.jpg","r15_21.jpg","r15_22.jpg","r15_23.jpg","r15_24.jpg"]
+				"src" : ["r12.jpg","r12.jpg","r12.jpg","r12.jpg","r12.jpg"]
 			},
 			{
 				"id" : "3",
-				"src" : ["r15_20.jpg","r15_21.jpg","r15_22.jpg","r15_23.jpg","r15_24.jpg"]
+				"src" : ["r13.jpg","r13.jpg","r13.jpg","r13.jpg","r13.jpg"]
 			},
 			{
 				"id" : "4",
-				"src" : ["r15_20.jpg","r15_21.jpg","r15_22.jpg","r15_23.jpg","r15_24.jpg"]
+				"src" : ["r14.jpg","r14.jpg","r14.jpg","r14.jpg","r14.jpg"]
 			},
 			{
 				"id" : "5",
-				"src" : ["r15_20.jpg","r15_21.jpg","r15_22.jpg","r15_23.jpg","r15_24.jpg"]
+				"src" : ["r15.jpg","r15.jpg","r15.jpg","r15.jpg","r15.jpg"]
+			},
+			{
+				"id" : "6",
+				"src" : ["r16.jpg","r16.jpg","r16.jpg","r16.jpg","r16.jpg"]
+			},
+			{
+				"id" : "7",
+				"src" : ["c11.jpg","c11.jpg","c11.jpg","c11.jpg","c11.jpg"]
+			},
+			{
+				"id" : "8",
+				"src" : ["8F_logos_01.jpg","8F_logos_01.jpg","8F_logos_01.jpg","8F_logos_01.jpg","8F_logos_01.jpg"]
+			},
+			{
+				"id" : "9",
+					"src" : ["8F_logos_02.jpg","8F_logos_02.jpg","8F_logos_02.jpg","8F_logos_02.jpg","8F_logos_02.jpg"]
+			},
+			{
+				"id" : "136",
+				"src" : ["c12.jpg","c12.jpg","c12.jpg","c12.jpg","c12.jpg"]
 			}
+			
 		],
 		"big" : [
 			{
 				"id" : "1",
-				"src" : ["r15_30.jpg","r15_31.jpg","r15_32.jpg","r15_33.jpg","r15_34.jpg"]
+				"src" : ["r11.jpg","r11.jpg","r11.jpg","r11.jpg","r11.jpg"]
 			},
 			{
 				"id" : "2",
-				"src" : ["r15_30.jpg","r15_31.jpg","r15_32.jpg","r15_33.jpg","r15_34.jpg"]
+				"src" : ["r12.jpg","r12.jpg","r12.jpg","r12.jpg","r12.jpg"]
 			},
 			{
 				"id" : "3",
-				"src" : ["r15_30.jpg","r15_31.jpg","r15_32.jpg","r15_33.jpg","r15_34.jpg"]
+				"src" : ["r13.jpg","r13.jpg","r13.jpg","r13.jpg","r13.jpg"]
 			},
 			{
 				"id" : "4",
-				"src" : ["r15_30.jpg","r15_31.jpg","r15_32.jpg","r15_33.jpg","r15_34.jpg"]
+				"src" : ["r14.jpg","r14.jpg","r14.jpg","r14.jpg","r14.jpg"]
 			},
 			{
 				"id" : "5",
-				"src" : ["r15_30.jpg","r15_31.jpg","r15_32.jpg","r15_33.jpg","r15_34.jpg"]
+				"src" : ["r15.jpg","r15.jpg","r15.jpg","r15.jpg","r15.jpg"]
+			},
+			{
+				"id" : "6",
+				"src" : ["r16.jpg","r16.jpg","r16.jpg","r16.jpg","r16.jpg"]
+			},
+			{
+				"id" : "7",
+				"src" : ["c11.jpg","c11.jpg","c11.jpg","c11.jpg","c11.jpg"]
+			},
+			{
+				"id" : "8",
+				"src" : ["8F_logos_01.jpg","8F_logos_01.jpg","8F_logos_01.jpg","8F_logos_01.jpg","8F_logos_01.jpg"]
+			},
+			{
+				"id" : "9",
+					"src" : ["8F_logos_02.jpg","8F_logos_02.jpg","8F_logos_02.jpg","8F_logos_02.jpg","8F_logos_02.jpg"]
+			},
+			{
+				"id" : "136",
+				"src" : ["c12.jpg","c12.jpg","c12.jpg","c12.jpg","c12.jpg"]
 			}
 		]
 			

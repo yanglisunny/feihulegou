@@ -59,9 +59,14 @@ requirejs(["jquery","reg","public"],function($,reg,pub){
 				var json = {
 					"uname":uname,
 					"upwd":upwd,
-					"uphone":uphone
+					"uphone":uphone,
+					"logined":0
 				}
-				pub.setCookie("3",JSON.stringify(json));
+				if(document.cookie){
+					pub.setCookie(pub.getCookieNum()+1,JSON.stringify(json));
+				}else{
+					pub.setCookie("1",JSON.stringify(json));
+				}
 				return true;
 			}else{
 				alert("检查验证码或者手机验证码是否错误")
@@ -74,6 +79,21 @@ requirejs(["jquery","reg","public"],function($,reg,pub){
 			//支持中文、字母、数字、“-”“_”的组合，4-20个字符
 			var regular = /^([\u4E00-\u9FA5\uF900-\uFA2D]|[A-Za-z0-9-_]){4,20}$/;
 			var txt = $(".username").find("input").val();
+			if(document.cookie){
+				console.log(document.cookie)
+				var brr = pub.getCookie2();
+				for(var key in brr){
+					var rname = JSON.parse(brr[key][1]).uname;
+					if(rname==txt){
+						$(".username").next().find("span").html("用户名已存在");
+						$(".username").find("i").css("display","none");
+						$(".username").next().find("span").css("color","red");
+						$(".username").css("border-color","red");
+						usernameFlag=false;
+						return;
+					}
+				}
+			}
 			if(regular.test(txt)){
 				$(".username").find("i").css("display","block");
 				$(".username").next().find("span").css("color","#e2d5cc");
@@ -152,12 +172,29 @@ requirejs(["jquery","reg","public"],function($,reg,pub){
 			focusflag=false;
 			var  tag =/^(15|13|18)\d{9}$/;//手机号： 15  13  18 开头
 			var txt = $(".phone>input").val();
+			if(document.cookie){
+				var brr = pub.getCookie2();
+				for(var key in brr){
+					var rphone = JSON.parse(brr[key][1]).uphone;
+					if(rphone==txt){
+						$(".phone").next().find("span").html("手机号已绑定");
+//						$(".phone").find("i").css("display","none");
+						$(".phone").next().find("span").css("color","red");
+						$(".phone").css("border-color","red");
+						phoneflag=false;
+						return;
+					}
+				}
+			}
 			if(tag.test(txt)){
 				$(".phone").find("i").css("display","block");
 				$(".phone").next().find("span").css("color","#e2d5cc");
+				$(".phone").css("border-color","#ddd");
 				phoneflag=true;
 			}else{
+				$(".phone").find("i").css("display","none");
 				$(".phone").next().find("span").css("color","red");
+				$(".phone").css("border-color","red");
 				phoneflag=false;
 				focusflag=true;
 			}

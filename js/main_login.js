@@ -22,7 +22,6 @@ requirejs(["jquery","login","pub"],function($,login,pub){
 	})
 	$("input").focus(function(){
 		$(".topic").html("");
-		console.log($(this).index())
 		$(this).next().css("display","block");
 	})
 	$("input").blur(function(){
@@ -32,24 +31,40 @@ requirejs(["jquery","login","pub"],function($,login,pub){
 	})
 	
 	
-	/*$(".clear").click(function(){
+	$(".clear").click(function(){
 		console.log(1)
 		$(this).prev().val("");
-	})*/
-	$("form").submit(function(){
+	})
+	
+	$(".sub").click(function(){
 		var lname = $("#user_name").val();
 		var lpwd = $("#password").val();
-		var rname = JSON.parse(pub.getCookie(3)).uname;
-		var rpwd = JSON.parse(pub.getCookie(3)).upwd;
-		var rphone = JSON.parse(pub.getCookie(3)).uphone;
 		//cookie的值
-		if(rname && rpwd && rphone){
-			if((lname == rname || lname == rphone) && lpwd==rpwd ){
-				return true;
-			}else{
-				$(".topic").html("输入错误,请重新输入");
-				return false;
+		if(document.cookie){
+			var brr = pub.getCookie2();
+			for(var key in brr){
+				console.log(brr[key][0])
+				var rname = JSON.parse(brr[key][1]).uname;
+				var rpwd = JSON.parse(brr[key][1]).upwd;
+				var rphone = JSON.parse(brr[key][1]).uphone;
+				var rlogined = JSON.parse(brr[key][1]).logined;
+				if((lname == rname || lname == rphone) && lpwd==rpwd ){
+//					pub.removeCookie(brr[key]);
+					console.log(document.cookie)
+					var json = {
+					"uname":rname,
+					"upwd":rpwd,
+					"uphone":rphone,
+					"logined":1,
+					}
+						pub.setCookie(brr[key][0],JSON.stringify(json));
+					location.href="index.html";
+				}else{
+					$(".topic").html("用户名或密码错误,请重新输入");
+				}
 			}
+		}else{
+			$(".topic").html("账号不存在");
 		}
 		
 	})

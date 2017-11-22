@@ -40,7 +40,7 @@ img {
 input:focus {
   outline: none; }
 
-.top1, .logo, .nav_con, .miaosha, .begin, #main, .bottom, .zhzq_con, .zhzq_con_bottom {
+.top1, .logo, .nav_con, .miaosha, .begin, #main, .bottom, .zhzq_con, .zhzq_con_bottom, .shoplist {
   width: 1200px;
   margin: 0 auto; }
 
@@ -288,7 +288,9 @@ input:focus {
       #zhzq .zhzq_con .zhzq_con_fdj .zhzq_con_fdjL #bigImg {
         position: absolute;
         left: 0;
-        top: 0; }
+        top: 0;
+        width: 800px;
+        height: 800px; }
       #zhzq .zhzq_con .zhzq_con_fdj .zhzq_con_fdjL #sImg {
         /*width:200px;*/
         padding-top: 10px;
@@ -297,6 +299,7 @@ input:focus {
         position: absolute;
         left: 0;
         top: 300px;
+        overflow: hidden;
         padding-left: 10px; }
         #zhzq .zhzq_con .zhzq_con_fdj .zhzq_con_fdjL #sImg .Lbtn {
           width: 10px;
